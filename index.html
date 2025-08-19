@@ -3,15 +3,14 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>documento</title>
-    <!--libreria-->
+    <title>Documento</title>
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">"
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
-
 
 <body>
     <!--navbar-->
@@ -19,11 +18,12 @@
         <nav class="navbar navbar-expand-lg fixed-top">
             <div class="container-fluid">
                 <a class="navbar-brand me-auto" href="#">Aurea</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
-                    aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                    aria-labelledby="offcanvasNavbarLabel">
                     <div class="offcanvas-header">
                         <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Estudio SVN</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -43,23 +43,91 @@
                                 <a class="nav-link" href="../pages/contacto.html">Contacto</a>
                             </li>
                         </ul>
+                        <!-- Botón de cambiar tema dentro del navbar -->
+                        <button id="toggleTheme" class="btn btn-outline-light ms-lg-3">🌙 Oscuro</button>
                     </div>
                 </div>
             </div>
         </nav>
-    <!--fin del navbar-->
     </header>
+    <!--fin del navbar-->
 
+    <div class="wrap">
+        <h1 class="title">Busca por nombre de botella</h1>
+        <p class="hint">Los precios de las bebidas pueden estar sujetos a cambios</p>
 
+        <!-- Barra de búsqueda -->
+        <form class="search" role="search" action="#" method="get">
+            <div class="search__icon" aria-hidden="true">
+                <!-- Lupa -->
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2" />
+                    <path d="M20 20L17 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                </svg>
+            </div>
 
+            <label class="sr-only" for="q">Buscar</label>
+            <input class="search__input" id="q" name="q" type="search" placeholder="Buscar productos..." required />
 
+            <button class="search__btn" type="submit" aria-label="Buscar">
+                <!-- Flecha -->
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 12h11" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                    <path d="M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </button>
+        </form>
+    </div>
+    <!-- Fin de la barra de búsqueda -->
+    
+    <!-- Catálogo -->
+    <section class="container my-5">
+        <div class="row" id="catalogo">
+            <!-- Producto 1 -->
+            <div class="col-md-4 mb-4 producto">
+                <div class="card h-100">
+                    <img src="assets/img/fernet.png" class="card-img-top" alt="Vino Tinto">
+                    <div class="card-body">
+                        <h5 class="card-title">Fernet</h5>
+                        <p class="card-text">Botella de 1L</p>
+                        <p class="precio">$2500</p>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Producto 2 -->
+            <div class="col-md-4 mb-4 producto">
+                <div class="card h-100">
+                    <img src="assets/img/vino2.jpg" class="card-img-top" alt="Vino Blanco">
+                    <div class="card-body">
+                        <h5 class="card-title">Vino Blanco</h5>
+                        <p class="card-text">Botella de 750ml</p>
+                        <p class="precio">$2300</p>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Producto 3 -->
+            <div class="col-md-4 mb-4 producto">
+                <div class="card h-100">
+                    <img src="assets/img/champagne.jpg" class="card-img-top" alt="Champagne">
+                    <div class="card-body">
+                        <h5 class="card-title">Champagne</h5>
+                        <p class="card-text">Botella de 1L</p>
+                        <p class="precio">$3500</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-
-
-
-    <!-- Enlace a los scripts de Bootstrap -->
+    <!-- Fin del catálogo -->
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
-    crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
 </body>
+
 </html>
