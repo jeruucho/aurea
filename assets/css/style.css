@@ -257,7 +257,7 @@ body.dark-mode .navbar {
 /* Efecto al pasar el mouse */
 #catalogo .card:hover {
     transform: scale(1.05);
-    border: 2px solid #0056b3;
+    border: 2px solid #152a6a;
     /* borde azul */
     box-shadow: 0 0 15px rgba(0, 86, 179, 0.6);
     /* glow azul */
@@ -268,3 +268,28 @@ body.dark-mode .navbar {
 #catalogo .card:hover .card-text {
     color: #0056b3;
 }
+
+.card-promo {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: #efb810; /* Dorado */
+    color: #000000;
+    padding: 7px 12px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+    position: relative;
+    top: 30px;
+    background-color: #152a6a;
+    padding: 20px;
+    text-align: center;
+    width: auto;
+    color:#fff;
+}
+

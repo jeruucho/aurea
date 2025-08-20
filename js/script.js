@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const toggleBtn = document.getElementById("toggleTheme");
 
   toggleBtn.addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
+    document.body.classList.toggle("dark-mode"); // 👈 usamos siempre dark-mode
 
     if (document.body.classList.contains("dark-mode")) {
       toggleBtn.textContent = "☀️ Claro";
@@ -23,7 +23,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let categoriaSeleccionada = "all"; // Por defecto mostrar todos
 
-  // Función que filtra productos según búsqueda y categoría
   function filtrarProductos() {
     const texto = input.value.toLowerCase();
 
@@ -44,14 +43,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // Evento: filtro por categoría
   botonesFiltro.forEach(boton => {
     boton.addEventListener("click", () => {
-      // Cambiar estado activo del botón
       botonesFiltro.forEach(b => b.classList.remove("active"));
       boton.classList.add("active");
-
-      // Cambiar categoría seleccionada
       categoriaSeleccionada = boton.getAttribute("data-filtro");
-
-      // Aplicar filtrado
       filtrarProductos();
     });
   });

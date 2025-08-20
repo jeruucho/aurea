@@ -25,18 +25,18 @@
                 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
                     aria-labelledby="offcanvasNavbarLabel">
                     <div class="offcanvas-header">
-                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Estudio SVN</h5>
+                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Aurea</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body">
                         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                             <li class="nav-item">
-                                <a class="nav-link" href="../index.html">Inicio</a>
+                                <a class="nav-link" href="index.html">Inicio</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="pages/catalogo.html">Catalogo</a>
                             <li class="nav-item">
-                                <a class="nav-link" href="../pages/contacto.html">Contacto</a>
+                                <a class="nav-link" href="pages/nosotros.html">Contacto</a>
                             </li>
                         </ul>
                         <!-- Botón de cambiar tema dentro del navbar -->
@@ -80,9 +80,9 @@
 <!-- Barra de filtros -->
 <div class="text-center my-4">
     <button class="btn btn-outline-dark filtro active" data-filtro="all">Todos</button>
-    <button class="btn btn-outline-dark filtro" data-filtro="aperitivo">Aperitivo</button>
+    <button class="btn btn-outline-dark filtro" data-filtro="aperitivo">Aperitivos</button>
     <button class="btn btn-outline-dark filtro" data-filtro="vino">Vinos</button>
-    <button class="btn btn-outline-dark filtro" data-filtro="champagne">Champagnes</button>
+    <button class="btn btn-outline-dark filtro" data-filtro="espumantes">Espumantes</button>
     <button class="btn btn-outline-dark filtro" data-filtro="vodka">Vodka</button>
 </div>
 
@@ -95,6 +95,7 @@
                 <div class="card h-100">
                     <img src="assets/img/fernet.png" class="card-img-top" alt="Fernet">
                     <div class="card-body">
+                        <h4 class="card-promo">¡Promo!</h4> <!--Etiqueta de promoción-->
                         <h5 class="card-title">Fernet</h5>
                         <p class="card-text">Botella de 1000ml</p>
                         <p class="precio">$2500</p>
@@ -126,9 +127,9 @@
             </div>
 
             <!-- Producto 3 -->
-            <div class="col-md-4 mb-4 producto" data-categoria="champagne">
+            <div class="col-md-4 mb-4 producto" data-categoria="espumantes">
                 <div class="card h-100">
-                    <img src="assets/img/champagne.jpg" class="card-img-top" alt="Champagne">
+                    <img src="assets/img/champagne.jpg" class="card-img-top" alt="espumante">
                     <div class="card-body">
                         <h5 class="card-title">Champagne</h5>
                         <p class="card-text">Botella de 1L</p>
@@ -138,14 +139,23 @@
             </div>
         </div>
     </section>
-
-
     <!-- Fin del catálogo -->
+    <footer>
+        <div class="box-footer">
+            <h3>Contactos</h3>
+            <a class="redes" href="" target="_blank">Instagram</a>
+            <a class="redes" href=""target="_blank">Whatsapp</a>
+            <!--target _blank es para que se abra otra pestaña cuando se quiere entrar al link-->
+        </div>
+    </footer>
+    <!-- Fin del footer -->
+    
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
         crossorigin="anonymous"></script>
     <script src="js/script.js"></script>
+    
 </body>
 
 </html>
