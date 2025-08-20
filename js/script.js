@@ -1,4 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // =========================
+  // 1. CAMBIO DE TEMA
+  // =========================
   const toggleBtn = document.getElementById("toggleTheme");
 
   toggleBtn.addEventListener("click", () => {
@@ -10,24 +13,46 @@ document.addEventListener("DOMContentLoaded", () => {
       toggleBtn.textContent = "🌙 Oscuro";
     }
   });
-});
 
-// Buscador de productos
-document.addEventListener("DOMContentLoaded", () => {
-    const input = document.getElementById("q");
-    const productos = document.querySelectorAll(".producto");
+  // =========================
+  // 2. BUSCADOR Y FILTRO DE CATEGORÍA
+  // =========================
+  const input = document.getElementById("q");               // Input de búsqueda
+  const productos = document.querySelectorAll(".producto"); // Todos los productos
+  const botonesFiltro = document.querySelectorAll(".filtro"); // Botones de categorías
 
-    input.addEventListener("keyup", () => {
-        let filtro = input.value.toLowerCase();
+  let categoriaSeleccionada = "all"; // Por defecto mostrar todos
 
-        productos.forEach(producto => {
-            let nombre = producto.querySelector(".card-title").textContent.toLowerCase();
+  // Función que filtra productos según búsqueda y categoría
+  function filtrarProductos() {
+    const texto = input.value.toLowerCase();
 
-            if (nombre.includes(filtro)) {
-                producto.style.display = "block";
-            } else {
-                producto.style.display = "none";
-            }
-        });
+    productos.forEach(producto => {
+      const nombre = producto.querySelector(".card-title").textContent.toLowerCase();
+      const categoria = producto.getAttribute("data-categoria");
+
+      const coincideTexto = nombre.includes(texto);
+      const coincideCategoria = categoriaSeleccionada === "all" || categoria === categoriaSeleccionada;
+
+      producto.style.display = (coincideTexto && coincideCategoria) ? "block" : "none";
     });
+  }
+
+  // Evento: búsqueda en barra
+  input.addEventListener("keyup", filtrarProductos);
+
+  // Evento: filtro por categoría
+  botonesFiltro.forEach(boton => {
+    boton.addEventListener("click", () => {
+      // Cambiar estado activo del botón
+      botonesFiltro.forEach(b => b.classList.remove("active"));
+      boton.classList.add("active");
+
+      // Cambiar categoría seleccionada
+      categoriaSeleccionada = boton.getAttribute("data-filtro");
+
+      // Aplicar filtrado
+      filtrarProductos();
+    });
+  });
 });

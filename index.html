@@ -35,10 +35,6 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="pages/catalogo.html">Catalogo</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link " href="pages/nosotros.html">Nosotros</a>
-                            </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="../pages/contacto.html">Contacto</a>
                             </li>
@@ -81,23 +77,44 @@
     </div>
     <!-- Fin de la barra de búsqueda -->
     
-    <!-- Catálogo -->
+<!-- Barra de filtros -->
+<div class="text-center my-4">
+    <button class="btn btn-outline-dark filtro active" data-filtro="all">Todos</button>
+    <button class="btn btn-outline-dark filtro" data-filtro="aperitivo">Aperitivo</button>
+    <button class="btn btn-outline-dark filtro" data-filtro="vino">Vinos</button>
+    <button class="btn btn-outline-dark filtro" data-filtro="champagne">Champagnes</button>
+    <button class="btn btn-outline-dark filtro" data-filtro="vodka">Vodka</button>
+</div>
+
+<!-- Catálogo -->
     <section class="container my-5">
         <div class="row" id="catalogo">
+
             <!-- Producto 1 -->
-            <div class="col-md-4 mb-4 producto">
+            <div class="col-md-4 mb-4 producto" data-categoria="aperitivo"> <!--categoria-->
                 <div class="card h-100">
-                    <img src="assets/img/fernet.png" class="card-img-top" alt="Vino Tinto">
+                    <img src="assets/img/fernet.png" class="card-img-top" alt="Fernet">
                     <div class="card-body">
                         <h5 class="card-title">Fernet</h5>
-                        <p class="card-text">Botella de 1L</p>
+                        <p class="card-text">Botella de 1000ml</p>
                         <p class="precio">$2500</p>
                     </div>
                 </div>
             </div>
-    
+
+            <div class="col-md-4 mb-4 producto" data-categoria="aperitivo"> <!--categoria-->
+                <div class="card h-100">
+                    <img src="assets/img/fernet.png" class="card-img-top" alt="Fernet">
+                    <div class="card-body">
+                        <h5 class="card-title">Fernet</h5>
+                        <p class="card-text">Botella de 750ml</p>
+                        <p class="precio">$1500</p>
+                    </div>
+                </div>
+            </div>
+
             <!-- Producto 2 -->
-            <div class="col-md-4 mb-4 producto">
+            <div class="col-md-4 mb-4 producto" data-categoria="vino">
                 <div class="card h-100">
                     <img src="assets/img/vino2.jpg" class="card-img-top" alt="Vino Blanco">
                     <div class="card-body">
@@ -107,9 +124,9 @@
                     </div>
                 </div>
             </div>
-    
+
             <!-- Producto 3 -->
-            <div class="col-md-4 mb-4 producto">
+            <div class="col-md-4 mb-4 producto" data-categoria="champagne">
                 <div class="card h-100">
                     <img src="assets/img/champagne.jpg" class="card-img-top" alt="Champagne">
                     <div class="card-body">
@@ -121,6 +138,7 @@
             </div>
         </div>
     </section>
+
 
     <!-- Fin del catálogo -->
     <!-- Bootstrap JS -->
