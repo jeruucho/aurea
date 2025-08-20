@@ -80,24 +80,20 @@ body.dark .search__icon svg {
     padding: 8px 12px;
     font-size: 16px;
     background: transparent;
-    /* color: inherit;  <- comentar para evitar heredar blanco en dark */
+}
+
+/* Texto en barra de búsqueda modo oscuro → negro */
+body.dark .search__input {
+    color: #000000 !important;
+    background-color: #2b2b2b !important;
 }
 
 .search__input::placeholder {
     color: #999;
 }
 
-/* TEXTO en barra de búsqueda modo oscuro → NEGRO */
-body.dark .search__input {
-    color: #000000 !important;
-    /* fuerza negro */
-    background-color: #2b2b2b !important;
-    /* fondo oscuro */
-}
-
 body.dark .search__input::placeholder {
     color: #666 !important;
-    /* placeholder gris */
 }
 
 .search__btn {
@@ -219,12 +215,56 @@ body.dark-mode .navbar {
 /* ===========================
    CATÁLOGO
    =========================== */
-#catalogo .card {
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease-in-out;
+#catalogo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
 }
 
+/* Cada producto ocupa el ancho deseado según pantalla */
+#catalogo .producto {
+    flex: 0 0 66%;
+    /* default, lo que tenías */
+    max-width: 66%;
+}
+
+/* 2 por fila tablet */
+@media (min-width: 768px) {
+    #catalogo .producto {
+        flex: 0 0 48%;
+        max-width: 48%;
+    }
+}
+
+/* 4 por fila desktop grande */
+@media (min-width: 1200px) {
+    #catalogo .producto {
+        flex: 0 0 23%;
+        max-width: 23%;
+    }
+}
+
+/* Tarjeta ocupa todo el ancho de su columna */
+#catalogo .card {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out, border 0.3s, color 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+/* Efecto al pasar el mouse */
 #catalogo .card:hover {
     transform: scale(1.05);
+    border: 2px solid #0056b3;
+    /* borde azul */
+    box-shadow: 0 0 15px rgba(0, 86, 179, 0.6);
+    /* glow azul */
+}
+
+/* Texto azul al pasar el mouse */
+#catalogo .card:hover .card-title,
+#catalogo .card:hover .card-text {
+    color: #0056b3;
 }
