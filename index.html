@@ -34,9 +34,19 @@
                                 <a class="nav-link" href="index.html">Inicio</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="pages/catalogo.html">Catalogo</a>
-                            <li class="nav-item">
                                 <a class="nav-link" href="pages/nosotros.html">Contacto</a>
+                            </li>
+                            <li> 
+                            <div class="dropdown">
+                                <button class="dropbtn">Categorias ⬇️</button> <!-- Botón de dropdown -->
+                                <div class="dropdown-content">
+                                    <button class="filtro active" data-filtro="all">Todos</button>
+                                    <button class="filtro" data-filtro="aperitivo">Aperitivos</button>
+                                    <button class="filtro" data-filtro="vino">Vinos</button>
+                                    <button class="filtro" data-filtro="espumante">Espumantes</button>
+                                    <button class="filtro" data-filtro="promo">Promos</button>
+                                    <button class="filtro" data-filtro="combo">Combos</button>
+                                </div>
                             </li>
                         </ul>
                         <!-- Botón de cambiar tema dentro del navbar -->
@@ -65,8 +75,9 @@
             <label class="sr-only" for="q">Buscar</label>
             <input class="search__input" id="q" name="q" type="search" placeholder="Buscar productos..." required />
 
+            <!-- Flecha -->
             <button class="search__btn" type="submit" aria-label="Buscar">
-                <!-- Flecha -->
+                
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M5 12h11" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
                     <path d="M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -80,10 +91,11 @@
 <!-- Barra de filtros -->
 <div class="text-center my-4">
     <button class="btn btn-outline-dark filtro active" data-filtro="all">Todos</button>
+    <button class="btn btn-outline-dark filtro" data-filtro="promo">Promos</button>
+    <button class="btn btn-outline-dark filtro" data-filtro="combo">Combos</button>
     <button class="btn btn-outline-dark filtro" data-filtro="aperitivo">Aperitivos</button>
     <button class="btn btn-outline-dark filtro" data-filtro="vino">Vinos</button>
-    <button class="btn btn-outline-dark filtro" data-filtro="espumantes">Espumantes</button>
-    <button class="btn btn-outline-dark filtro" data-filtro="vodka">Vodka</button>
+    <button class="btn btn-outline-dark filtro" data-filtro="espumante">Espumantes</button>
 </div>
 
 <!-- Catálogo -->
@@ -91,7 +103,7 @@
         <div class="row" id="catalogo">
 
             <!-- Producto 1 -->
-            <div class="col-md-4 mb-4 producto" data-categoria="aperitivo"> <!--categoria-->
+            <div class="col-md-4 mb-4 producto" data-categoria="aperitivo promo"> <!--categorias-->
                 <div class="card h-100">
                     <img src="assets/img/fernet.png" class="card-img-top" alt="Fernet">
                     <div class="card-body">
@@ -103,6 +115,7 @@
                 </div>
             </div>
 
+            <!-- Producto 2 -->
             <div class="col-md-4 mb-4 producto" data-categoria="aperitivo"> <!--categoria-->
                 <div class="card h-100">
                     <img src="assets/img/fernet.png" class="card-img-top" alt="Fernet">
@@ -114,7 +127,7 @@
                 </div>
             </div>
 
-            <!-- Producto 2 -->
+            <!-- Producto 3 -->
             <div class="col-md-4 mb-4 producto" data-categoria="vino">
                 <div class="card h-100">
                     <img src="assets/img/vino2.jpg" class="card-img-top" alt="Vino Blanco">
@@ -126,8 +139,8 @@
                 </div>
             </div>
 
-            <!-- Producto 3 -->
-            <div class="col-md-4 mb-4 producto" data-categoria="espumantes">
+            <!-- Producto 4 -->
+            <div class="col-md-4 mb-4 producto" data-categoria="espumante">
                 <div class="card h-100">
                     <img src="assets/img/champagne.jpg" class="card-img-top" alt="espumante">
                     <div class="card-body">

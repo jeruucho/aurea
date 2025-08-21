@@ -293,3 +293,54 @@ footer {
     color:#fff;
 }
 
+/* Contenedor del dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Botón del dropdown */
+.dropbtn {
+    background-color: #152a6a;
+    color: #fff;
+    padding: 10px 16px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Menú desplegable oculto por defecto */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    border-radius: 8px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    margin-top: 5px;
+    flex-direction: column;
+}
+
+/* Botones dentro del menú */
+.dropdown-content .filtro {
+    width: 100%;
+    border: none;
+    background: transparent;
+    padding: 10px;
+    text-align: left;
+    cursor: pointer;
+    color: #152a6a;
+    transition: background 0.3s;
+}
+
+.dropdown-content .filtro:hover {
+    background-color: #152a6a;
+    color: #fff;
+}
+
+/* Mostrar menú al activar */
+.dropdown.show .dropdown-content {
+    display: flex;
+}
