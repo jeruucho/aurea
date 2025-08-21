@@ -4,13 +4,26 @@ document.addEventListener("DOMContentLoaded", () => {
   // =========================
   const toggleBtn = document.getElementById("toggleTheme");
 
+  // ✅ Al cargar, leer preferencia guardada
+  const temaGuardado = localStorage.getItem("tema");
+  if (temaGuardado === "dark") {
+    document.body.classList.add("dark-mode");
+    toggleBtn.textContent = "☀️ Claro";
+  } else {
+    document.body.classList.remove("dark-mode");
+    toggleBtn.textContent = "🌙 Oscuro";
+  }
+
+  // Evento click para cambiar tema
   toggleBtn.addEventListener("click", () => {
     document.body.classList.toggle("dark-mode");
 
     if (document.body.classList.contains("dark-mode")) {
       toggleBtn.textContent = "☀️ Claro";
+      localStorage.setItem("tema", "dark"); // guardar preferencia
     } else {
       toggleBtn.textContent = "🌙 Oscuro";
+      localStorage.setItem("tema", "light"); // guardar preferencia
     }
   });
 
@@ -20,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const input = document.getElementById("q");                  
   const productos = document.querySelectorAll(".producto");    
   const botonesFiltro = document.querySelectorAll(".filtro, .dropdown-item");  
-  // 👆 ahora incluye botones + items del dropdown
+  // ahora incluye botones + items del dropdown
 
   let categoriaSeleccionada = "all"; // Por defecto mostrar todos
 

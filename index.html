@@ -33,20 +33,26 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="index.html">Inicio</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="pages/nosotros.html">Contacto</a>
-                            </li>
                             <li> 
                             <div class="dropdown">
-                                <button class="dropbtn">Categorias ⬇️</button> <!-- Botón de dropdown -->
+                                <button class="dropbtn">Categorias</button> <!-- Botón de dropdown -->
                                 <div class="dropdown-content">
                                     <button class="filtro active" data-filtro="all">Todos</button>
                                     <button class="filtro" data-filtro="aperitivo">Aperitivos</button>
-                                    <button class="filtro" data-filtro="vino">Vinos</button>
+                                    <div class="submenu">
+                                        <button class="filtro" data-filtro="vino">Vinos</button>
+                                            <div class="submenu-content">
+                                                <button class="filtro" data-filtro="tinto">Vino Tinto</button>
+                                                <button class="filtro" data-filtro="blanco">Vino Blanco</button>
+                                            </div>
+                                    </div>
                                     <button class="filtro" data-filtro="espumante">Espumantes</button>
                                     <button class="filtro" data-filtro="promo">Promos</button>
                                     <button class="filtro" data-filtro="combo">Combos</button>
                                 </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="pages/nosotros.html">Contacto</a>
                             </li>
                         </ul>
                         <!-- Botón de cambiar tema dentro del navbar -->
@@ -86,7 +92,7 @@
             </button>
         </form>
     </div>
-    <!-- Fin de la barra de búsqueda -->
+    <!-- Fin de la barra de búsqueda --> 
     
 <!-- Barra de filtros -->
 <div class="text-center my-4">
@@ -128,7 +134,7 @@
             </div>
 
             <!-- Producto 3 -->
-            <div class="col-md-4 mb-4 producto" data-categoria="vino">
+            <div class="col-md-4 mb-4 producto" data-categoria="vino blanco">
                 <div class="card h-100">
                     <img src="assets/img/vino2.jpg" class="card-img-top" alt="Vino Blanco">
                     <div class="card-body">
@@ -150,8 +156,22 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Producto 5 -->
+            <div class="col-md-4 mb-4 producto" data-categoria="vino tinto">
+                <div class="card h-100">
+                    <img src="assets/img/vino2.jpg" class="card-img-top" alt="Vino Tinto">
+                    <div class="card-body">
+                        <h5 class="card-title">Vino Tinto</h5>
+                        <p class="card-text">Botella de 750ml</p>
+                        <p class="precio">$2700</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
+
+
     <!-- Fin del catálogo -->
     <footer>
         <div class="box-footer">

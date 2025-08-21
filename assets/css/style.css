@@ -225,7 +225,7 @@ body.dark-mode .navbar {
 /* Cada producto ocupa el ancho deseado según pantalla */
 #catalogo .producto {
     flex: 0 0 66%;
-    /* default, lo que tenías */
+    /* default */
     max-width: 66%;
 }
 
@@ -273,7 +273,8 @@ body.dark-mode .navbar {
     position: absolute;
     top: 15px;
     left: 15px;
-    background-color: #efb810; /* Dorado */
+    background-color: #efb810;
+    /* Dorado */
     color: #000000;
     padding: 7px 12px;
     border-radius: 5px;
@@ -290,8 +291,12 @@ footer {
     padding: 20px;
     text-align: center;
     width: auto;
-    color:#fff;
+    color: #fff;
 }
+
+/* ===========================
+   DROPDOWN + SUBMENÚ
+   =========================== */
 
 /* Contenedor del dropdown */
 .dropdown {
@@ -315,7 +320,7 @@ footer {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
-    min-width: 160px;
+    min-width: 180px;
     border-radius: 8px;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
     z-index: 1000;
@@ -343,4 +348,82 @@ footer {
 /* Mostrar menú al activar */
 .dropdown.show .dropdown-content {
     display: flex;
+}
+
+/* Submenú */
+.submenu {
+    position: relative;
+}
+
+.submenu>a {
+    display: block;
+    padding: 10px;
+    color: #152a6a;
+    text-decoration: none;
+}
+
+.submenu-content {
+    display: none;
+    position: absolute;
+    left: 100%;
+    /* se abre a la derecha */
+    top: 0;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    border-radius: 8px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+    flex-direction: column;
+}
+
+.submenu:hover .submenu-content {
+    display: flex;
+}
+
+.submenu-content a {
+    padding: 10px;
+    text-decoration: none;
+    color: #152a6a;
+    transition: background 0.3s;
+}
+
+.submenu-content a:hover {
+    background-color: #152a6a;
+    color: #fff;
+}
+
+/* ===========================
+   FLECHA EN SUBMENÚ
+   =========================== */
+.submenu>.filtro::after {
+    content: "";
+    display: inline-block;
+    margin-left: 8px;
+    border: solid #152a6a;
+    border-width: 0 2px 2px 0;
+    padding: 4px;
+    transform: rotate(-45deg);
+    /* Flecha derecha */
+    transition: border-color 0.3s;
+}
+
+.submenu>.filtro:hover::after {
+    border-color: #fff;
+}
+/* ===========================
+   FLECHA HACIA ABAJO (NAVBAR)
+   =========================== */
+.navbar .dropdown>.dropbtn::after {
+    content: "";
+    display: inline-block;
+    margin-left: 8px;
+    border: solid #ffffff;
+    border-width: 0 2px 2px 0;
+    padding: 4px;
+    transform: rotate(45deg);
+    /* 🔽 Flecha hacia abajo */
+}
+
+.navbar .dropdown>.dropbtn:hover::after {
+    border-color: #fff;
 }
