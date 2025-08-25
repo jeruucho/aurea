@@ -1,14 +1,45 @@
 /* ===========================
+   RESET & BASE
+   =========================== */
+html,
+body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    background-color: #fffdf7;
+    color: #000000;
+}
+
+.redes {
+    margin: 20px;
+    font-size: 20px;
+    justify-content: space-between;
+    color: #efb810;
+}
+
+/* Tema oscuro */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+/* ===========================
    NAVBAR
    =========================== */
+.navbar {
+    background-color: #f8f9fa;
+    color: #152a6a !important;
+}
 
-/* Navbar en tema claro */
 body.light .navbar {
     background-color: #f8f9fa !important;
     color: #000000;
 }
 
-/* Navbar en tema oscuro */
 body.dark .navbar {
     background-color: #ffffff !important;
     color: #fff;
@@ -18,11 +49,25 @@ body.dark .navbar .nav-link {
     color: #fff !important;
 }
 
-/* Color fijo para textos del navbar (siempre igual) */
 .navbar,
 .navbar .nav-link,
 .navbar a {
     color: #152a6a !important;
+}
+
+/* Flechas dropdown */
+.navbar .dropdown>.dropbtn::after {
+    content: "";
+    display: inline-block;
+    margin-left: 8px;
+    border: solid #ffffff;
+    border-width: 0 2px 2px 0;
+    padding: 4px;
+    transform: rotate(45deg);
+}
+
+.navbar .dropdown>.dropbtn:hover::after {
+    border-color: #fff;
 }
 
 /* ===========================
@@ -34,13 +79,79 @@ body.dark .navbar .nav-link {
 }
 
 /* ===========================
-   CONTENEDOR GENERAL
+   LAYOUT GENERAL
    =========================== */
+main {
+    flex: 1;
+}
+
 .wrap {
     max-width: 600px;
     margin: 120px auto 40px;
     padding: 0 15px;
     text-align: center;
+}
+
+/* ===========================
+   CATÁLOGO
+   =========================== */
+#catalogo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+#catalogo .producto {
+    flex: 0 0 66%;
+    max-width: 66%;
+}
+
+@media (min-width: 768px) {
+    #catalogo .producto {
+        flex: 0 0 48%;
+        max-width: 48%;
+    }
+}
+
+@media (min-width: 1200px) {
+    #catalogo .producto {
+        flex: 0 0 23%;
+        max-width: 23%;
+    }
+}
+
+#catalogo .card {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out, border 0.3s, color 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+#catalogo .card:hover {
+    transform: scale(1.05);
+    border: 2px solid #152a6a;
+    box-shadow: 0 0 15px rgba(0, 86, 179, 0.6);
+}
+
+#catalogo .card:hover .card-title,
+#catalogo .card:hover .card-text {
+    color: #0056b3;
+}
+
+.card-promo {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: #efb810;
+    color: #000000;
+    padding: 7px 12px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
 /* ===========================
@@ -56,7 +167,6 @@ body.dark .navbar .nav-link {
     transition: background 0.3s, box-shadow 0.3s;
 }
 
-/* Barra de búsqueda en modo oscuro */
 body.dark .search {
     background: #2b2b2b;
     box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
@@ -68,7 +178,6 @@ body.dark .search {
     color: #555;
 }
 
-/* Ícono en modo oscuro */
 body.dark .search__icon svg {
     color: #ddd;
 }
@@ -82,7 +191,6 @@ body.dark .search__icon svg {
     background: transparent;
 }
 
-/* Texto en barra de búsqueda modo oscuro → negro */
 body.dark .search__input {
     color: #000000 !important;
     background-color: #2b2b2b !important;
@@ -134,9 +242,146 @@ body.dark .search__input::placeholder {
     color: #fff;
 }
 
-/* Botón de filtro activo */
 .filtro.active {
     background-color: #152a6a;
+    color: #fff;
+}
+
+/* ===========================
+   FILTROS MODO OSCURO
+   =========================== */
+body.dark-mode .filtro {
+    background-color: #444;
+    /* todos parecen activados */
+    color: #fff;
+    border: 1px solid #888;
+}
+
+body.dark-mode .filtro:hover {
+    background-color: #666;
+}
+
+body.dark-mode .filtro.active {
+    background-color: #152a6a;
+    /* el que realmente está activo */
+    color: #fff;
+    border: 1px solid #0056b3;
+}
+
+/* ===========================
+   DROPDOWN + SUBMENÚ
+   =========================== */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background-color: #152a6a;
+    color: #fff;
+    padding: 10px 16px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 180px;
+    border-radius: 8px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    margin-top: 5px;
+    flex-direction: column;
+}
+
+.dropdown-content .filtro {
+    width: 100%;
+    border: none;
+    background: transparent;
+    padding: 10px;
+    text-align: left;
+    cursor: pointer;
+    color: #152a6a;
+    transition: background 0.3s;
+}
+
+.dropdown-content .filtro:hover {
+    background-color: #152a6a;
+    color: #fff;
+}
+
+.dropdown.show .dropdown-content {
+    display: flex;
+}
+
+.submenu {
+    position: relative;
+}
+
+.submenu>a {
+    display: block;
+    padding: 10px;
+    color: #152a6a;
+    text-decoration: none;
+}
+
+.submenu-content {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    border-radius: 8px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+    flex-direction: column;
+}
+
+.submenu:hover .submenu-content {
+    display: flex;
+}
+
+.submenu-content a {
+    padding: 10px;
+    text-decoration: none;
+    color: #152a6a;
+    transition: background 0.3s;
+}
+
+.submenu-content a:hover {
+    background-color: #152a6a;
+    color: #fff;
+}
+
+/* Flechas submenu */
+.submenu>.filtro::after {
+    content: "";
+    display: inline-block;
+    margin-left: 8px;
+    border: solid #152a6a;
+    border-width: 0 2px 2px 0;
+    padding: 4px;
+    transform: rotate(-45deg);
+    transition: border-color 0.3s;
+}
+
+.submenu>.filtro:hover::after {
+    border-color: #fff;
+}
+
+/* ===========================
+   FOOTER
+   =========================== */
+footer {
+    background-color: #152a6a;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
     color: #fff;
 }
 
@@ -155,32 +400,7 @@ body.dark .search__input::placeholder {
 }
 
 /* ===========================
-   TEMAS (CLARO / OSCURO)
-   =========================== */
-
-/* Tema claro (default) */
-body {
-    background-color: #ffffff;
-    color: #000000;
-}
-
-/* Navbar claro */
-.navbar {
-    background-color: #f8f9fa;
-}
-
-/* Tema oscuro */
-body.dark-mode {
-    background-color: #121212;
-    color: #ffffff;
-}
-
-body.dark-mode .navbar {
-    background-color: #ffffff;
-}
-
-/* ===========================
-   LAYOUT RESPONSIVE
+   LAYOUT RESPONSIVE MEDIDAS
    =========================== */
 @media (min-width: 320px) {
 
@@ -210,220 +430,4 @@ body.dark-mode .navbar {
         justify-content: space-between;
         padding: 40px;
     }
-}
-
-/* ===========================
-   CATÁLOGO
-   =========================== */
-#catalogo {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
-
-/* Cada producto ocupa el ancho deseado según pantalla */
-#catalogo .producto {
-    flex: 0 0 66%;
-    /* default */
-    max-width: 66%;
-}
-
-/* 2 por fila tablet */
-@media (min-width: 768px) {
-    #catalogo .producto {
-        flex: 0 0 48%;
-        max-width: 48%;
-    }
-}
-
-/* 4 por fila desktop grande */
-@media (min-width: 1200px) {
-    #catalogo .producto {
-        flex: 0 0 23%;
-        max-width: 23%;
-    }
-}
-
-/* Tarjeta ocupa todo el ancho de su columna */
-#catalogo .card {
-    width: 100%;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease-in-out, border 0.3s, color 0.3s, box-shadow 0.3s;
-    cursor: pointer;
-}
-
-/* Efecto al pasar el mouse */
-#catalogo .card:hover {
-    transform: scale(1.05);
-    border: 2px solid #152a6a;
-    /* borde azul */
-    box-shadow: 0 0 15px rgba(0, 86, 179, 0.6);
-    /* glow azul */
-}
-
-/* Texto azul al pasar el mouse */
-#catalogo .card:hover .card-title,
-#catalogo .card:hover .card-text {
-    color: #0056b3;
-}
-
-.card-promo {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    background-color: #efb810;
-    /* Dorado */
-    color: #000000;
-    padding: 7px 12px;
-    border-radius: 5px;
-    font-size: 12px;
-    font-weight: bold;
-    text-transform: uppercase;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-}
-
-footer {
-    position: relative;
-    top: 30px;
-    background-color: #152a6a;
-    padding: 20px;
-    text-align: center;
-    width: auto;
-    color: #fff;
-}
-
-/* ===========================
-   DROPDOWN + SUBMENÚ
-   =========================== */
-
-/* Contenedor del dropdown */
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-/* Botón del dropdown */
-.dropbtn {
-    background-color: #152a6a;
-    color: #fff;
-    padding: 10px 16px;
-    font-size: 16px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-/* Menú desplegable oculto por defecto */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 180px;
-    border-radius: 8px;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-    margin-top: 5px;
-    flex-direction: column;
-}
-
-/* Botones dentro del menú */
-.dropdown-content .filtro {
-    width: 100%;
-    border: none;
-    background: transparent;
-    padding: 10px;
-    text-align: left;
-    cursor: pointer;
-    color: #152a6a;
-    transition: background 0.3s;
-}
-
-.dropdown-content .filtro:hover {
-    background-color: #152a6a;
-    color: #fff;
-}
-
-/* Mostrar menú al activar */
-.dropdown.show .dropdown-content {
-    display: flex;
-}
-
-/* Submenú */
-.submenu {
-    position: relative;
-}
-
-.submenu>a {
-    display: block;
-    padding: 10px;
-    color: #152a6a;
-    text-decoration: none;
-}
-
-.submenu-content {
-    display: none;
-    position: absolute;
-    left: 100%;
-    /* se abre a la derecha */
-    top: 0;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    border-radius: 8px;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    z-index: 1001;
-    flex-direction: column;
-}
-
-.submenu:hover .submenu-content {
-    display: flex;
-}
-
-.submenu-content a {
-    padding: 10px;
-    text-decoration: none;
-    color: #152a6a;
-    transition: background 0.3s;
-}
-
-.submenu-content a:hover {
-    background-color: #152a6a;
-    color: #fff;
-}
-
-/* ===========================
-   FLECHA EN SUBMENÚ
-   =========================== */
-.submenu>.filtro::after {
-    content: "";
-    display: inline-block;
-    margin-left: 8px;
-    border: solid #152a6a;
-    border-width: 0 2px 2px 0;
-    padding: 4px;
-    transform: rotate(-45deg);
-    /* Flecha derecha */
-    transition: border-color 0.3s;
-}
-
-.submenu>.filtro:hover::after {
-    border-color: #fff;
-}
-/* ===========================
-   FLECHA HACIA ABAJO (NAVBAR)
-   =========================== */
-.navbar .dropdown>.dropbtn::after {
-    content: "";
-    display: inline-block;
-    margin-left: 8px;
-    border: solid #ffffff;
-    border-width: 0 2px 2px 0;
-    padding: 4px;
-    transform: rotate(45deg);
-    /* 🔽 Flecha hacia abajo */
-}
-
-.navbar .dropdown>.dropbtn:hover::after {
-    border-color: #fff;
 }

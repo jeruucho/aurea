@@ -33,7 +33,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const input = document.getElementById("q");                  
   const productos = document.querySelectorAll(".producto");    
   const botonesFiltro = document.querySelectorAll(".filtro, .dropdown-item");  
-  // ahora incluye botones + items del dropdown
 
   let categoriaSeleccionada = "all"; // Por defecto mostrar todos
 
@@ -44,8 +43,13 @@ document.addEventListener("DOMContentLoaded", () => {
       const nombre = producto.querySelector(".card-title").textContent.toLowerCase();
       const categorias = producto.getAttribute("data-categoria").split(" "); // soporte multi-categoría
 
-      const coincideTexto = nombre.includes(texto);
-      const coincideCategoria = categoriaSeleccionada === "all" || categorias.includes(categoriaSeleccionada);
+      // ✅ ahora busca por nombre o por categorías
+      const coincideTexto =
+        nombre.includes(texto) ||
+        categorias.some(cat => cat.includes(texto));
+
+      const coincideCategoria =
+        categoriaSeleccionada === "all" || categorias.includes(categoriaSeleccionada);
 
       producto.style.display = (coincideTexto && coincideCategoria) ? "block" : "none";
     });
