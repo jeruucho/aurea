@@ -251,19 +251,21 @@ body.dark .search__input::placeholder {
    FILTROS MODO OSCURO
    =========================== */
 body.dark-mode .filtro {
-    background-color: #444;
-    /* todos parecen activados */
-    color: #fff;
-    border: 1px solid #888;
+    background-color: transparent;
+    /* igual que en modo claro */
+    color: #ffffff;
+    /* letras blancas */
+    border: 1px solid #152a6a;
+    /* igual que en modo claro */
 }
 
 body.dark-mode .filtro:hover {
-    background-color: #666;
+    background-color: #152a6a;
+    color: #fff;
 }
 
 body.dark-mode .filtro.active {
     background-color: #152a6a;
-    /* el que realmente está activo */
     color: #fff;
     border: 1px solid #0056b3;
 }
@@ -284,6 +286,35 @@ body.dark-mode .filtro.active {
     border: none;
     border-radius: 8px;
     cursor: pointer;
+}
+
+/* Dropdown content modo dark */
+body.dark-mode .dropdown-content,
+body.dark-mode .submenu-content {
+    background-color: #000000;
+}
+
+body.dark-mode .dropdown-content .filtro,
+body.dark-mode .submenu-content a {
+    color: #ffffff;
+    background: transparent;
+}
+
+body.dark-mode .dropdown-content .filtro:hover,
+body.dark-mode .submenu-content a:hover {
+    background-color: #152a6a;
+    color: #fff;
+}
+
+/* Flechas siempre visibles en modo dark y azul */
+body.dark-mode .navbar .dropdown>.dropbtn::after {
+    border-color: #ffffff;
+    /* blanca */
+}
+
+body.dark-mode .submenu>.filtro::after {
+    border-color: #ffffff;
+    /* blanca */
 }
 
 .dropdown-content {
