@@ -39,16 +39,18 @@
                                 <div class="dropdown-content">
                                     <button class="filtro active" data-filtro="all">Todos</button>
                                     <button class="filtro" data-filtro="aperitivo">Aperitivos</button>
-                                    <div class="submenu">
-                                        <button class="filtro" data-filtro="vino">Vinos</button>
-                                            <div class="submenu-content">
-                                                <button class="filtro" data-filtro="tinto">Vino Tinto</button>
-                                                <button class="filtro" data-filtro="blanco">Vino Blanco</button>
-                                            </div>
-                                    </div>
+                                    <button class="filtro" data-filtro="cerveza">Cervezas</button>
+                                    <button class="filtro" data-filtro="combo">Combos</button>
                                     <button class="filtro" data-filtro="espumante">Espumantes</button>
                                     <button class="filtro" data-filtro="promo">Promos</button>
-                                    <button class="filtro" data-filtro="combo">Combos</button>
+                                    <div class="submenu">
+                                        <button class="filtro" data-filtro="vino">Vinos</button>
+                                        <div class="submenu-content">
+                                            <button class="filtro" data-filtro="tinto">Vino Tinto</button>
+                                            <button class="filtro" data-filtro="blanco">Vino Blanco</button>
+                                        </div>
+                                    </div>
+                                    <button class="filtro" data-filtro="whisky">Whisky</button>
                                 </div>
                             </li>
                             <li class="nav-item">
@@ -66,7 +68,7 @@
 
     <div class="wrap">
         <h1 class="title">Busca por nombre de botella</h1>
-        <p class="hint">Los precios de las bebidas pueden estar sujetos a cambios</p>
+        <p class="hint">Ultima actualzacion: 28-08-2025</p> <!--ACTUALIZACION-->
 
         <!-- Barra de búsqueda -->
         <form class="search" role="search" action="#" method="get">
@@ -96,12 +98,14 @@
     
 <!-- Barra de filtros -->
 <div class="text-center my-4">
-    <button class="btn btn-outline-dark filtro active" data-filtro="all"><b>Todos</b></button>
+    <button class="btn btn-outline-dark filtro active" data-filtro="all"><b>Todas</b></button>
     <button class="btn btn-outline-dark filtro" data-filtro="promo"><b>Promos</b></button>
-    <button class="btn btn-outline-dark filtro" data-filtro="combo"><b>Combos</b></button>
     <button class="btn btn-outline-dark filtro" data-filtro="aperitivo"><b>Aperitivos</b></button>
-    <button class="btn btn-outline-dark filtro" data-filtro="vino"><b>Vinos</b></b></button>
+    <button class="btn btn-outline-dark filtro" data-filtro="cerveza"><b>Cervezas</b></button>
+    <button class="btn btn-outline-dark filtro" data-filtro="combo"><b>Combos</b></button>
     <button class="btn btn-outline-dark filtro" data-filtro="espumante"><b>Espumantes</b></button>
+    <button class="btn btn-outline-dark filtro" data-filtro="vino"><b>Vinos</b></b></button>
+    <button class="btn btn-outline-dark filtro" data-filtro="whisky"><b>Whisky</b></button>
 </div>
 
 <!-- Catálogo -->
@@ -122,6 +126,18 @@
             </div>
 
             <!-- Producto 2 -->
+            <div class="col-md-4 mb-4 producto" data-categoria="aperitivo vodka"> <!--categoria-->
+                <div class="card h-100">
+                    <img src="" class="card-img-top" alt="Vodka">
+                    <div class="card-body">
+                        <h5 class="card-title">Smirnoff Común</h5>
+                        <p class="card-text">Botella de 750ml</p>
+                        <p class="precio">$1500</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 3 -->
             <div class="col-md-4 mb-4 producto" data-categoria="aperitivo"> <!--categoria-->
                 <div class="card h-100">
                     <img src="assets/img/fernet.png" class="card-img-top" alt="Fernet">
@@ -133,7 +149,7 @@
                 </div>
             </div>
 
-            <!-- Producto 3 -->
+            <!-- Producto 4 -->
             <div class="col-md-4 mb-4 producto" data-categoria="vino blanco">
                 <div class="card h-100">
                     <img src="assets/img/vino2.jpg" class="card-img-top" alt="Vino Blanco">
@@ -145,7 +161,7 @@
                 </div>
             </div>
 
-            <!-- Producto 4 -->
+            <!-- Producto 5 -->
             <div class="col-md-4 mb-4 producto" data-categoria="espumante">
                 <div class="card h-100">
                     <img src="assets/img/champagne.jpg" class="card-img-top" alt="espumante">
@@ -157,7 +173,7 @@
                 </div>
             </div>
 
-            <!-- Producto 5 -->
+            <!-- Producto 6 -->
             <div class="col-md-4 mb-4 producto" data-categoria="vino tinto">
                 <div class="card h-100">
                     <img src="assets/img/vino2.jpg" class="card-img-top" alt="Vino Tinto">
@@ -168,6 +184,57 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Producto 7 -->
+            <div class="col-md-4 mb-4 producto" data-categoria="cerveza">
+                <div class="card h-100">
+                    <img src="assets/img/champagne.jpg" class="card-img-top" alt="Imperial Apa">
+                    <div class="card-body">
+                        <h5 class="card-title">Imperial Apa</h5>
+                        <p class="card-text">Pack 6 Latas x473ml</p>
+                        <p class="precio">$8000</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 7 -->
+            <div class="col-md-4 mb-4 producto" data-categoria="cerveza">
+                <div class="card h-100">
+                    <img src="assets/img/cerveza.jpg" class="card-img-top" alt="Imperial Apa">
+                    <div class="card-body">
+                        <h5 class="card-title">Imperial Apa</h5>
+                        <p class="card-text">Pack 6 Latas x473ml</p>
+                        <p class="precio">$8000</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 8 -->
+            <div class="col-md-4 mb-4 producto" data-categoria="whisky">
+                <div class="card h-100">
+                    <img src="assets/img/jwred.webp" class="card-img-top" alt="Johnnie Walker Red Label">
+                    <div class="card-body">
+                        <h5 class="card-title">Johnnie Walker Red Label</h5>
+                        <p class="card-text">Botella de 750ml</p>
+                        <p class="precio">$28.000</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 9 -->
+            <div class="col-md-4 mb-4 producto" data-categoria="whisky">
+                <div class="card h-100">
+                    <img src="assets/img/jwred.webp" class="card-img-top" alt="Johnnie Walker Red Label">
+                    <div class="card-body">
+                        <h5 class="card-title">Johnnie Walker Red Label</h5>
+                        <p class="card-text">Botella de 1000ml</p>
+                        <p class="precio">$32.000</p>
+                    </div>
+                </div>
+            </div>
+
+
+
         </div>
     </section>
 <!-- Fin del catálogo -->
@@ -189,6 +256,10 @@
         crossorigin="anonymous"></script>
     <script src="js/script.js"></script>
     
+    <a href="https://wa.me/549XXXXXXXX" class="whatsapp-float" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+    </a>
+
 </body>
 
 </html>
