@@ -14,6 +14,7 @@ body {
     background-color: #fffdf7;
     color: #000000;
 }
+
 .title {
     font-size: 40px;
     margin-bottom: 10px;
@@ -21,6 +22,7 @@ body {
     text-decoration: underline;
     font-family: Raleway
 }
+
 .redes {
     margin: 20px;
     font-size: 20px;
@@ -478,17 +480,23 @@ footer {
    SECCIÓN CONTACTO
    =========================== */
 .section-contacto {
-    max-width: 1000px;       /* aumenta el ancho máximo */
-    min-height: 600px;      /* asegura que tenga altura suficiente */
-    margin: 80px auto 60px; /* centrado y separación del navbar */
-    padding: 40px 50px;     /* más espacio interno */
+    max-width: 1000px;
+    /* aumenta el ancho máximo */
+    min-height: 600px;
+    /* asegura que tenga altura suficiente */
+    margin: 80px auto 60px;
+    /* centrado y separación del navbar */
+    padding: 40px 50px;
+    /* más espacio interno */
     background: #f8f9fa;
-    border-radius: 12px;    /* ligeramente más redondeada */
-    box-shadow: 0 6px 25px rgba(0,0,0,0.12);
+    border-radius: 12px;
+    /* ligeramente más redondeada */
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
     text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* mejor distribución del contenido */
+    justify-content: space-between;
+    /* mejor distribución del contenido */
 }
 
 .section-contacto p {
@@ -515,6 +523,7 @@ footer {
 
 .info-contacto li {
     margin: 12px 0;
+    color: #000000;
 }
 
 /* Botones de redes sociales */
@@ -581,4 +590,23 @@ footer {
 .whatsapp-float:hover {
     transform: scale(1.1);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* ===========================
+   FIXES PARA MODO DARK
+   =========================== */
+
+/* El título principal (index) queda blanco */
+body.dark-mode .title {
+    color: #ffffff;
+}
+
+/* En la sección contacto, los párrafos siguen negros */
+body.dark-mode .section-contacto p {
+    color: #000000;
+}
+
+/* En la sección contacto, el título también sigue negro */
+body.dark-mode .section-contacto .title {
+    color: #000000;
 }
