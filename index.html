@@ -7,8 +7,8 @@
 
     <title>Documento</title>
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
@@ -33,31 +33,31 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="index.html">Inicio</a>
                             </li>
-                            <li> 
-                            <div class="dropdown">
-                                <button class="dropbtn">Categorias</button> <!-- Botón de dropdown -->
-                                <div class="dropdown-content">
-                                    <button class="filtro active" data-filtro="all">Todos</button>
-                                    <button class="filtro" data-filtro="aperitivo">Aperitivos</button>
-                                    <button class="filtro" data-filtro="cerveza">Cervezas</button>
-                                    <button class="filtro" data-filtro="combo">Combos</button>
-                                    <button class="filtro" data-filtro="espumante">Espumantes</button>
-                                    <button class="filtro" data-filtro="promo">Promos</button>
-                                    <div class="submenu">
-                                        <button class="filtro" data-filtro="vino">Vinos</button>
-                                        <div class="submenu-content">
-                                            <button class="filtro" data-filtro="tinto">Vino Tinto</button>
-                                            <button class="filtro" data-filtro="blanco">Vino Blanco</button>
+                            <li>
+                                <div class="dropdown">
+                                    <button class="dropbtn">Categorias</button>
+                                    <div class="dropdown-content">
+                                        <button class="filtro active" data-filtro="all">Todos</button>
+                                        <button class="filtro" data-filtro="aperitivo">Aperitivos</button>
+                                        <button class="filtro" data-filtro="cerveza">Cervezas</button>
+                                        <button class="filtro" data-filtro="combo">Combos</button>
+                                        <button class="filtro" data-filtro="espumante">Espumantes</button>
+                                        <button class="filtro" data-filtro="promo">Promos</button>
+                                        <div class="submenu">
+                                            <button class="filtro" data-filtro="vino">Vinos</button>
+                                            <div class="submenu-content">
+                                                <button class="filtro" data-filtro="tinto">Vino Tinto</button>
+                                                <button class="filtro" data-filtro="blanco">Vino Blanco</button>
+                                            </div>
                                         </div>
+                                        <button class="filtro" data-filtro="whisky">Whisky</button>
                                     </div>
-                                    <button class="filtro" data-filtro="whisky">Whisky</button>
                                 </div>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="pages/nosotros.html">Contacto</a>
                             </li>
                         </ul>
-                        <!-- Botón de cambiar tema dentro del navbar -->
                         <button id="toggleTheme" class="btn btn-outline-light ms-lg-3">🌙 Oscuro</button>
                     </div>
                 </div>
@@ -68,12 +68,11 @@
 
     <div class="wrap">
         <h1 class="title">Busca por nombre de botella</h1>
-        <p class="hint">Ultima actualzacion: 28-08-2025</p> <!--ACTUALIZACION-->
+        <p class="hint">Ultima actualizacion: 28-08-2025</p>
 
         <!-- Barra de búsqueda -->
         <form class="search" role="search" action="#" method="get">
             <div class="search__icon" aria-hidden="true">
-                <!-- Lupa -->
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2" />
                     <path d="M20 20L17 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
@@ -83,9 +82,7 @@
             <label class="sr-only" for="q">Buscar</label>
             <input class="search__input" id="q" name="q" type="search" placeholder="Buscar productos..." required />
 
-            <!-- Flecha -->
             <button class="search__btn" type="submit" aria-label="Buscar">
-                
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M5 12h11" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
                     <path d="M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -94,30 +91,29 @@
             </button>
         </form>
     </div>
-    <!-- Fin de la barra de búsqueda --> 
-    
-<!-- Barra de filtros -->
-<div class="text-center my-4">
-    <button class="btn btn-outline-dark filtro active" data-filtro="all"><b>Todas</b></button>
-    <button class="btn btn-outline-dark filtro" data-filtro="promo"><b>Promos</b></button>
-    <button class="btn btn-outline-dark filtro" data-filtro="aperitivo"><b>Aperitivos</b></button>
-    <button class="btn btn-outline-dark filtro" data-filtro="cerveza"><b>Cervezas</b></button>
-    <button class="btn btn-outline-dark filtro" data-filtro="combo"><b>Combos</b></button>
-    <button class="btn btn-outline-dark filtro" data-filtro="espumante"><b>Espumantes</b></button>
-    <button class="btn btn-outline-dark filtro" data-filtro="vino"><b>Vinos</b></b></button>
-    <button class="btn btn-outline-dark filtro" data-filtro="whisky"><b>Whisky</b></button>
-</div>
 
-<!-- Catálogo -->
+    <!-- Barra de filtros -->
+    <div class="text-center my-4">
+        <button class="btn btn-outline-dark filtro active" data-filtro="all"><b>Todas</b></button>
+        <button class="btn btn-outline-dark filtro" data-filtro="promo"><b>Promos</b></button>
+        <button class="btn btn-outline-dark filtro" data-filtro="aperitivo"><b>Aperitivos</b></button>
+        <button class="btn btn-outline-dark filtro" data-filtro="cerveza"><b>Cervezas</b></button>
+        <button class="btn btn-outline-dark filtro" data-filtro="combo"><b>Combos</b></button>
+        <button class="btn btn-outline-dark filtro" data-filtro="espumante"><b>Espumantes</b></button>
+        <button class="btn btn-outline-dark filtro" data-filtro="vino"><b>Vinos</b></button>
+        <button class="btn btn-outline-dark filtro" data-filtro="whisky"><b>Whisky</b></button>
+    </div>
+
+    <!-- Catálogo -->
     <section class="container my-5">
         <div class="row" id="catalogo">
 
             <!-- Producto 1 -->
-            <div class="col-md-4 mb-4 producto" data-categoria="aperitivo promo"> <!--categorias-->
+            <div class="col-md-4 mb-4 producto" data-categoria="aperitivo promo">
                 <div class="card h-100">
-                    <img src="assets/img/fernet.png" class="card-img-top" alt="Fernet">
+                    <img src="assets/img/fernet.jpeg" class="card-img-top" alt="Fernet">
                     <div class="card-body">
-                        <h4 class="card-promo">¡Promo!</h4> <!--Etiqueta de promoción-->
+                        <h4 class="card-promo">¡Promo!</h4>
                         <h5 class="card-title">Fernet</h5>
                         <p class="card-text">Botella de 1000ml</p>
                         <p class="precio">$2500</p>
@@ -126,7 +122,7 @@
             </div>
 
             <!-- Producto 2 -->
-            <div class="col-md-4 mb-4 producto" data-categoria="aperitivo vodka"> <!--categoria-->
+            <div class="col-md-4 mb-4 producto" data-categoria="aperitivo vodka">
                 <div class="card h-100">
                     <img src="" class="card-img-top" alt="Vodka">
                     <div class="card-body">
@@ -138,7 +134,7 @@
             </div>
 
             <!-- Producto 3 -->
-            <div class="col-md-4 mb-4 producto" data-categoria="aperitivo"> <!--categoria-->
+            <div class="col-md-4 mb-4 producto" data-categoria="aperitivo">
                 <div class="card h-100">
                     <img src="assets/img/fernet.png" class="card-img-top" alt="Fernet">
                     <div class="card-body">
@@ -152,11 +148,11 @@
             <!-- Producto 4 -->
             <div class="col-md-4 mb-4 producto" data-categoria="vino blanco">
                 <div class="card h-100">
-                    <img src="assets/img/vino2.jpg" class="card-img-top" alt="Vino Blanco">
+                    <img src="assets/img/santajulia.jpeg" class="card-img-top" alt="Santa Julia">
                     <div class="card-body">
-                        <h5 class="card-title">Vino Blanco</h5>
+                        <h5 class="card-title">Vino Santa Julia</h5>
                         <p class="card-text">Botella de 750ml</p>
-                        <p class="precio">$2300</p>
+                        <p class="precio">$6500</p>
                     </div>
                 </div>
             </div>
@@ -164,9 +160,9 @@
             <!-- Producto 5 -->
             <div class="col-md-4 mb-4 producto" data-categoria="espumante">
                 <div class="card h-100">
-                    <img src="assets/img/champagne.jpg" class="card-img-top" alt="espumante">
+                    <img src="assets/img/vinyesdulce.jpeg" class="card-img-top" alt="Bodega Vinyes Dulce torrontes">
                     <div class="card-body">
-                        <h5 class="card-title">Champagne</h5>
+                        <h5 class="card-title">Bodega Vinyes Dulce Torrontes</h5>
                         <p class="card-text">Botella de 1L</p>
                         <p class="precio">$3500</p>
                     </div>
@@ -174,92 +170,155 @@
             </div>
 
             <!-- Producto 6 -->
-            <div class="col-md-4 mb-4 producto" data-categoria="vino tinto">
+            <div class="col-md-4 mb-4 producto" data-categoria="vino blanco">
                 <div class="card h-100">
-                    <img src="assets/img/vino2.jpg" class="card-img-top" alt="Vino Tinto">
+                    <img src="assets/img/crux.jpeg" class="card-img-top" alt="Vino crux">
                     <div class="card-body">
-                        <h5 class="card-title">Vino Tinto</h5>
+                        <h5 class="card-title">Vino crux</h5>
                         <p class="card-text">Botella de 750ml</p>
                         <p class="precio">$2700</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Producto 7 -->
-            <div class="col-md-4 mb-4 producto" data-categoria="cerveza">
+            <!-- Producto 7 (Carrusel) -->
+            <div class="col-md-4 mb-4 producto" data-categoria="">
                 <div class="card h-100">
-                    <img src="assets/img/champagne.jpg" class="card-img-top" alt="Imperial Apa">
-                    <div class="card-body">
-                        <h5 class="card-title">Imperial Apa</h5>
-                        <p class="card-text">Pack 6 Latas x473ml</p>
-                        <p class="precio">$8000</p>
+                    <div id="carouselProducto7" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="assets/img/regaleria1.jpeg" class="d-block w-100" alt="regalo 1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/img/regaleria2.jpeg" class="d-block w-100" alt="regalo 2">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselProducto7"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselProducto7"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </button>
                     </div>
-                </div>
-            </div>
-
-            <!-- Producto 7 -->
-            <div class="col-md-4 mb-4 producto" data-categoria="cerveza">
-                <div class="card h-100">
-                    <img src="assets/img/cerveza.jpg" class="card-img-top" alt="Imperial Apa">
                     <div class="card-body">
-                        <h5 class="card-title">Imperial Apa</h5>
-                        <p class="card-text">Pack 6 Latas x473ml</p>
-                        <p class="precio">$8000</p>
+                        <h5 class="card-title">Regalería</h5>
+                        <p class="card-text">Set de regalo</p>
+                        <p class="precio">$Colsutar combo</p>
                     </div>
                 </div>
             </div>
 
             <!-- Producto 8 -->
-            <div class="col-md-4 mb-4 producto" data-categoria="whisky">
+            <div class="col-md-4 mb-4 producto" data-categoria="aperitivo">
                 <div class="card h-100">
-                    <img src="assets/img/jwred.webp" class="card-img-top" alt="Johnnie Walker Red Label">
+                    <img src="assets/img/amarula.jpeg" class="card-img-top" alt="Amarull">
                     <div class="card-body">
-                        <h5 class="card-title">Johnnie Walker Red Label</h5>
-                        <p class="card-text">Botella de 750ml</p>
-                        <p class="precio">$28.000</p>
+                        <h5 class="card-title">Amarula + vaso</h5>
+                        <p class="card-text">Botella de 375ml</p>
+                        <p class="precio">$20.000</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Producto 9 -->
-            <div class="col-md-4 mb-4 producto" data-categoria="whisky">
+            <!-- Producto 9 (Carrusel) -->
+            <div class="col-md-4 mb-4 producto" data-categoria="">
                 <div class="card h-100">
-                    <img src="assets/img/jwred.webp" class="card-img-top" alt="Johnnie Walker Red Label">
+                    <div id="carouselProducto9" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="assets/img/olivazuccardi1.jpeg" class="d-block w-100" alt="oliva 1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/img/olivazuccardi2.jpeg" class="d-block w-100" alt="oliva 2">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/img/olivazuccardi3.jpeg" class="d-block w-100" alt="oliva 3">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/img/olivazuccardi4.jpeg" class="d-block w-100" alt="oliva 4">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/img/olivazuccardi5.jpeg" class="d-block w-100" alt="oliva 5">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselProducto9"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselProducto9"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </button>
+                    </div>
                     <div class="card-body">
-                        <h5 class="card-title">Johnnie Walker Red Label</h5>
+                        <h5 class="card-title">Aceite de Oliva</h5>
                         <p class="card-text">Botella de 1000ml</p>
                         <p class="precio">$32.000</p>
                     </div>
                 </div>
             </div>
 
+            <!-- Producto 10 -->
+            <div class="col-md-4 mb-4 producto" data-categoria="vino tinto">
+                <div class="card h-100">
+                    <img src="assets/img/nocheterna.jpeg" class="card-img-top" alt="vino nocheterna">
+                    <div class="card-body">
+                        <h5 class="card-title">Vino Nocheterna</h5>
+                        <p class="card-text">Botella de 750ml</p>
+                        <p class="precio">$28.000</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 11 -->
+            <div class="col-md-4 mb-4 producto" data-categoria="aperitivo">
+                <div class="card h-100">
+                    <img src="assets/img/mildemonios.jpeg" class="card-img-top" alt="Mildemonios">
+                    <div class="card-body">
+                        <h5 class="card-title">Gin Mildemonios</h5>
+                        <p class="card-text">Botella de 750ml</p>
+                        <p class="precio">$40.000</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 12 -->
+            <div class="col-md-4 mb-4 producto" data-categoria="whisky">
+                <div class="card h-100">
+                    <img src="assets/img/jackdaniels.jpeg" class="card-img-top" alt="Jack Daniel's">
+                    <div class="card-body">
+                        <h5 class="card-title">Jack Daniel's</h5>
+                        <p class="card-text">Botella de 750ml</p>
+                        <p class="precio">$40.000</p>
+                    </div>
+                </div>
+            </div>
 
 
         </div>
     </section>
-<!-- Fin del catálogo -->
+    <!-- Fin del catálogo -->
 
     <!-- Footer -->
     <footer>
         <div class="box-footer">
             <h3>Contactos</h3>
             <a class="redes" href="https://www.instagram.com/aurea_bebidas/" target="_blank">Instagram</a>
-            <a class="redes" href="https://wa.me/2212005230"target="_blank">Whatsapp</a>
-            <!--target _blank es para que se abra otra pestaña cuando se quiere entrar al link-->
+            <a class="redes" href="https://wa.me/2212005230" target="_blank">Whatsapp</a>
         </div>
     </footer>
-    <!-- Fin del footer -->
-    
+
     <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
     <script src="js/script.js"></script>
-    
+
     <a href="https://wa.me/2212005230" class="whatsapp-float" target="_blank">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
     </a>
-
 </body>
 
 </html>
