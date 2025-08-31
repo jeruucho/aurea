@@ -15,6 +15,15 @@ body {
     color: #000000;
 }
 
+img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    /* útil para imágenes de tarjetas o carousel */
+}
+
 .title {
     font-size: 40px;
     margin-bottom: 10px;
@@ -46,6 +55,14 @@ body.dark-mode {
     color: #152a6a !important;
     font-family: Montserrat;
     font-size: 20px;
+}
+
+.navbar .navbar-brand {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 28px;
+    font-weight: bold;
 }
 
 body.light .navbar {
@@ -113,6 +130,7 @@ main {
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
+    width: 100%;
 }
 
 #catalogo .producto {
@@ -685,6 +703,16 @@ body.dark-mode .section-contacto .title {
 }
 
 .carousel-dots button.active {
-    background: #152a6a;
-    /* color de tu web */
+    background: #152a6a}
+
+    #catalogo .producto {
+    flex: 0 0 calc(66% - 20px); /* restar gap */
+    max-width: calc(66% - 20px);
 }
+@media (min-width: 768px) {
+    #catalogo .producto { flex: 0 0 calc(48% - 20px); max-width: calc(48% - 20px); }
+}
+@media (min-width: 1200px) {
+    #catalogo .producto { flex: 0 0 calc(23% - 20px); max-width: calc(23% - 20px); }
+}
+

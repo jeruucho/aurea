@@ -5,10 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Documento</title>
-    <!-- Bootstrap -->
+    <title>Catalago Aurea</title>
+
+    <!-- Hints de red para CDNs (no cambia estilos) -->
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="dns-prefetch" href="https://upload.wikimedia.org">
+    <link rel="preconnect" href="https://upload.wikimedia.org" crossorigin>
+
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <!-- Tu CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
@@ -17,7 +26,7 @@
     <header>
         <nav class="navbar navbar-expand-lg fixed-top">
             <div class="container-fluid">
-                <a class="navbar-brand me-auto" href="#">Aurea</a>
+                <a class="navbar-brand mx-auto" href="#"><b>Aurea</b></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -37,20 +46,22 @@
                                 <div class="dropdown">
                                     <button class="dropbtn">Categorias</button>
                                     <div class="dropdown-content">
-                                        <button class="filtro active" data-filtro="all">Todos</button>
-                                        <button class="filtro" data-filtro="aperitivo">Aperitivos</button>
-                                        <button class="filtro" data-filtro="cerveza">Cervezas</button>
-                                        <button class="filtro" data-filtro="combo">Combos</button>
-                                        <button class="filtro" data-filtro="espumante">Espumantes</button>
-                                        <button class="filtro" data-filtro="promo">Promos</button>
+                                        <button class="filtro active" data-filtro="all" type="button">Todos</button>
+                                        <button class="filtro" data-filtro="aperitivo" type="button">Aperitivos</button>
+                                        <button class="filtro" data-filtro="cerveza" type="button">Cervezas</button>
+                                        <button class="filtro" data-filtro="combo" type="button">Combos</button>
+                                        <button class="filtro" data-filtro="espumante" type="button">Espumantes</button>
+                                        <button class="filtro" data-filtro="promo" type="button">Promos</button>
                                         <div class="submenu">
-                                            <button class="filtro" data-filtro="vino">Vinos</button>
+                                            <button class="filtro" data-filtro="vino" type="button">Vinos</button>
                                             <div class="submenu-content">
-                                                <button class="filtro" data-filtro="tinto">Vino Tinto</button>
-                                                <button class="filtro" data-filtro="blanco">Vino Blanco</button>
+                                                <button class="filtro" data-filtro="tinto" type="button">Vino
+                                                    Tinto</button>
+                                                <button class="filtro" data-filtro="blanco" type="button">Vino
+                                                    Blanco</button>
                                             </div>
                                         </div>
-                                        <button class="filtro" data-filtro="whisky">Whisky</button>
+                                        <button class="filtro" data-filtro="whisky" type="button">Whisky</button>
                                     </div>
                                 </div>
                             </li>
@@ -66,415 +77,449 @@
     </header>
     <!--fin del navbar-->
 
-    <div class="wrap">
-        <h1 class="title">Busca por producto</h1>
-        <p class="hint">Ultima actualizacion: 28-08-2025</p>
+    <main>
+        <div class="wrap">
+            <h1 class="title">Busca por producto</h1>
+            <p class="hint">Ultima actualizacion: 28-08-2025</p>
 
-        <!-- Barra de búsqueda -->
-        <form class="search" role="search" action="#" method="get">
-            <div class="search__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2" />
-                    <path d="M20 20L17 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                </svg>
-            </div>
-
-            <label class="sr-only" for="q">Buscar</label>
-            <input class="search__input" id="q" name="q" type="search" placeholder="Buscar productos..." required />
-
-            <button class="search__btn" type="submit" aria-label="Buscar">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M5 12h11" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                    <path d="M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                </svg>
-            </button>
-        </form>
-    </div>
-
-    <!-- Barra de filtros -->
-    <div class="text-center my-4">
-        <button class="btn btn-outline-dark filtro active" data-filtro="all"><b>Todas</b></button>
-        <button class="btn btn-outline-dark filtro" data-filtro="promo"><b>Promos</b></button>
-        <button class="btn btn-outline-dark filtro" data-filtro="aperitivo"><b>Aperitivos</b></button>
-        <button class="btn btn-outline-dark filtro" data-filtro="cerveza"><b>Cervezas</b></button>
-        <button class="btn btn-outline-dark filtro" data-filtro="combo"><b>Combos</b></button>
-        <button class="btn btn-outline-dark filtro" data-filtro="espumante"><b>Espumantes</b></button>
-        <button class="btn btn-outline-dark filtro" data-filtro="vino"><b>Vinos</b></button>
-        <button class="btn btn-outline-dark filtro" data-filtro="whisky"><b>Whisky</b></button>
-    </div>
-
-    <!-- Catálogo -->
-    <section class="container my-5">
-        <div class="row" id="catalogo">
-
-            <!-- Producto 1 -->
-            <div class="col-md-4 mb-4 producto" data-categoria="aperitivo promo">
-                <div class="card h-100">
-                    <img src="assets/img/fernet.jpeg" class="card-img-top" alt="Fernet">
-                    <div class="card-body">
-                        <h4 class="card-promo">¡Promo!</h4>
-                        <h5 class="card-title">Fernet</h5>
-                        <p class="card-text">Botella de 1000ml</p>
-                        <p class="precio">$2500</p>
-                    </div>
+            <!-- Barra de búsqueda -->
+            <form class="search" role="search" action="#" method="get">
+                <div class="search__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2" />
+                        <path d="M20 20L17 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                    </svg>
                 </div>
-            </div>
 
-            <!-- Producto 2 -->
-            <div class="col-md-4 mb-4 producto" data-categoria="aperitivo vodka">
-                <div class="card h-100">
-                    <img src="assets/img/smirnoffcomun.jpeg" class="card-img-top" alt="Vodka">
-                    <div class="card-body">
-                        <h5 class="card-title">Smirnoff Común</h5>
-                        <p class="card-text">Botella de 750ml</p>
-                        <p class="precio">$1500</p>
-                    </div>
-                </div>
-            </div>
+                <label class="sr-only" for="q">Buscar</label>
+                <input class="search__input" id="q" name="q" type="search" placeholder="Buscar productos..." required />
 
-            <!-- Producto 3 -->
-            <div class="col-md-4 mb-4 producto" data-categoria="aperitivo">
-                <div class="card h-100">
-                    <img src="assets/img/fernet.png" class="card-img-top" alt="Fernet">
-                    <div class="card-body">
-                        <h5 class="card-title">Fernet</h5>
-                        <p class="card-text">Botella de 750ml</p>
-                        <p class="precio">$1500</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Producto 4 -->
-            <div class="col-md-4 mb-4 producto" data-categoria="vino blanco">
-                <div class="card h-100">
-                    <img src="assets/img/santajulia.jpeg" class="card-img-top" alt="Santa Julia">
-                    <div class="card-body">
-                        <h5 class="card-title">Vino Santa Julia dulce</h5>
-                        <p class="card-text">Botella de 750ml</p>
-                        <p class="precio">$6500</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Producto 5 -->
-            <div class="col-md-4 mb-4 producto" data-categoria="espumante">
-                <div class="card h-100">
-                    <img src="assets/img/vinyesdulce.jpeg" class="card-img-top" alt="Vinyes Dulce torrontes">
-                    <div class="card-body">
-                        <h5 class="card-title">Vinyes Dulce Torrontes</h5>
-                        <p class="card-text">Botella de 1L</p>
-                        <p class="precio">$3500</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Producto 6 -->
-            <div class="col-md-4 mb-4 producto" data-categoria="vino blanco">
-                <div class="card h-100">
-                    <img src="assets/img/crux.jpeg" class="card-img-top" alt="Vino crux">
-                    <div class="card-body">
-                        <h5 class="card-title">Vino crux</h5>
-                        <p class="card-text">Botella de 750ml</p>
-                        <p class="precio">$2700</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Producto 7 (Carrusel) -->
-            <div class="col-md-4 mb-4 producto" data-categoria="">
-                <div class="card h-100">
-                    <div id="carouselProducto7" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="assets/img/regaleria1.jpeg" class="d-block w-100" alt="regalo 1">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="assets/img/regaleria2.jpeg" class="d-block w-100" alt="regalo 2">
-                            </div>
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselProducto7"
-                            data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon"></span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselProducto7"
-                            data-bs-slide="next">
-                            <span class="carousel-control-next-icon"></span>
-                        </button>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Regalería</h5>
-                        <p class="card-text">Set de regalo</p>
-                        <p class="precio">$ Consultar combo</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Producto 8 -->
-            <div class="col-md-4 mb-4 producto" data-categoria="aperitivo">
-                <div class="card h-100">
-                    <img src="assets/img/amarula.jpeg" class="card-img-top" alt="Amarula">
-                    <div class="card-body">
-                        <h5 class="card-title">Amarula + vaso</h5>
-                        <p class="card-text">Botella de 375ml</p>
-                        <p class="precio">$20.000</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Producto 9 (Carrusel) -->
-            <div class="col-md-4 mb-4 producto" data-categoria="">
-                <div class="card h-100">
-                    <div id="carouselProducto9" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="assets/img/olivazuccardi1.jpeg" class="d-block w-100" alt="oliva 1">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="assets/img/olivazuccardi2.jpeg" class="d-block w-100" alt="oliva 2">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="assets/img/olivazuccardi3.jpeg" class="d-block w-100" alt="oliva 3">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="assets/img/olivazuccardi4.jpeg" class="d-block w-100" alt="oliva 4">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="assets/img/olivazuccardi5.jpeg" class="d-block w-100" alt="oliva 5">
-                            </div>
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselProducto9"
-                            data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon"></span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselProducto9"
-                            data-bs-slide="next">
-                            <span class="carousel-control-next-icon"></span>
-                        </button>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Aceite de Oliva Zuccardi</h5>
-                        <p class="card-text">Botella de 500ml x3 + libro de recetas</p>
-                        <p class="precio">$50.000</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Producto 10 -->
-            <div class="col-md-4 mb-4 producto" data-categoria="vino tinto">
-                <div class="card h-100">
-                    <img src="assets/img/nocheterna.jpeg" class="card-img-top" alt="Vino Nocheterna">
-                    <div class="card-body">
-                        <h5 class="card-title">Vino Nocheterna</h5>
-                        <p class="card-text">Botella de 750ml</p>
-                        <p class="precio">$7.500</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Producto 11 -->
-            <div class="col-md-4 mb-4 producto" data-categoria="aperitivo">
-                <div class="card h-100">
-                    <img src="assets/img/mildemonios.jpeg" class="card-img-top" alt="Mildemonios">
-                    <div class="card-body">
-                        <h5 class="card-title">Gin Mildemonios</h5>
-                        <p class="card-text">Botella de 750ml</p>
-                        <p class="precio">$40.000</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Producto 12 -->
-            <div class="col-md-4 mb-4 producto" data-categoria="whisky">
-                <div class="card h-100">
-                    <img src="assets/img/jackdaniels.jpeg" class="card-img-top" alt="Jack Daniel's">
-                    <div class="card-body">
-                        <h5 class="card-title">Jack Daniel's</h5>
-                        <p class="card-text">Botella de 750ml</p>
-                        <p class="precio">$40.000</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Producto 13 -->
-            <div class="col-md-4 mb-4 producto" data-categoria="vino tinto">
-                <div class="card h-100">
-                    <img src="assets/img/nicasia.jpg" class="card-img-top" alt="Nicasia">
-                    <div class="card-body">
-                        <h5 class="card-title">Vino Nicasia</h5>
-                        <p class="card-text">Botella de 750ml</p>
-                        <p class="precio">$6.500</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Producto 13 -->
-            <div class="col-md-4 mb-4 producto" data-categoria="combo">
-                <div class="card h-100">
-                    <img src="assets/img/combocatena.jpeg" class="card-img-top" alt="D.V. Catena">
-                    <div class="card-body">
-                        <h5 class="card-title">Combo D.V. Catena</h5>
-                        <p class="card-text">Botella de 750ml + 2 copas de cristal</p>
-                        <p class="precio">$32.000</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Producto 13 -->
-            <div class="col-md-4 mb-4 producto" data-categoria="combo">
-                <div class="card h-100">
-                    <img src="assets/img/combosj.jpeg" class="card-img-top" alt="Santa Julia">
-                    <div class="card-body">
-                        <h5 class="card-title">Combo Santa Julia dulce</h5>
-                        <p class="card-text">Botella de 750ml + 2 copas de cristal</p>
-                        <p class="precio">$30.000</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Producto 14 -->
-            <div class="col-md-4 mb-4 producto" data-categoria="espumante">
-                <div class="card h-100">
-                    <img src="assets/img/vinyesextrabrut.jpeg" class="card-img-top" alt="Vinyes Extra Brut">
-                    <div class="card-body">
-                        <h5 class="card-title">Vinyes Extra Brut</h5>
-                        <p class="card-text">Botella de 750ml</p>
-                        <p class="precio">$15.000</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Producto 15 -->
-            <div class="col-md-4 mb-4 producto" data-categoria="espumante">
-                <div class="card h-100">
-                    <img src="assets/img/vinyesrosado.jpeg" class="card-img-top" alt="Vinyes Nat Rosado">
-                    <div class="card-body">
-                        <h5 class="card-title">Vinyes Nat Rosado</h5>
-                        <p class="card-text">Botella de 750ml</p>
-                        <p class="precio">$20.000</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Producto 16 -->
-            <div class="col-md-4 mb-4 producto" data-categoria="aperitivo">
-                <div class="card h-100">
-                    <img src="assets/img/jagger.jpeg" class="card-img-top" alt="Jägermeister">
-                    <div class="card-body">
-                        <h5 class="card-title">Jagermeister</h5>
-                        <p class="card-text">Botella de 700ml</p>
-                        <p class="precio">$32.500</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Producto 17 -->
-            <div class="col-md-4 mb-4 producto" data-categoria="combo">
-                <div class="card h-100">
-                    <img src="assets/img/combocorona.jpg" class="card-img-top" alt="Combo Corona">
-                    <div class="card-body">
-                        <h5 class="card-title">Combo Corona</h5>
-                        <p class="card-text">Frapera Corona + soporte de celular (no incluye las cerveza)</p>
-                        <p class="precio">$28.000</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Producto 18 -->
-            <div class="col-md-4 mb-4 producto" data-categoria="espumante">
-                <div class="card h-100">
-                    <img src="assets/img/baronb.jpeg" class="card-img-top" alt="Baron B">
-                    <div class="card-body">
-                        <h5 class="card-title">Baron B Extra brut</h5>
-                        <p class="card-text">Botella de 750ml</p>
-                        <p class="precio">$29.000</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Producto 19 -->
-            <div class="col-md-4 mb-4 producto" data-categoria="espumante">
-                <div class="card h-100">
-                    <img src="assets/img/chandon.jpeg" class="card-img-top" alt="Chandon">
-                    <div class="card-body">
-                        <h5 class="card-title">Chandon Extra brut</h5>
-                        <p class="card-text">Botella de 750ml</p>
-                        <p class="precio">$15.000</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Producto 19 -->
-            <div class="col-md-4 mb-4 producto" data-categoria="espumante combo">
-                <div class="card h-100">
-                    <img src="assets/img/combovinyes.jpeg" class="card-img-top" alt="Combo Vinyes">
-                    <div class="card-body">
-                        <h5 class="card-title">Combo Vinyes</h5>
-                        <p class="card-text">Botellas de 750ml x3 distintas</p>
-                        <p class="precio">$46.000</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Producto 20 -->
-            <div class="col-md-4 mb-4 producto" data-categoria="vino tinto combo">
-                <div class="card h-100">
-                    <img src="assets/img/comboriver.jpeg" class="card-img-top" alt="Combo River">
-                    <div class="card-body">
-                        <h5 class="card-title">Combo River Regalo</h5>
-                        <p class="card-text">Botella de 750ml + 2 copas de cristal + caja de regalo</p>
-                        <p class="precio">$45.000</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Producto 21 -->
-            <div class="col-md-4 mb-4 producto" data-categoria="vino tinto combo">
-                <div class="card h-100">
-                    <img src="assets/img/comboboca.jpeg" class="card-img-top" alt="Combo Boca">
-                    <div class="card-body">
-                        <h5 class="card-title">Combo Boca Regalo</h5>
-                        <p class="card-text">Botella de 750ml + 2 copas de cristal + caja de regalo</p>
-                        <p class="precio">$45.000</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Producto 20 -->
-            <div class="col-md-4 mb-4 producto" data-categoria="vino tinto combo">
-                <div class="card h-100">
-                    <img src="assets/img/combonicasia.jpeg" class="card-img-top" alt="Combo Nicasia">
-                    <div class="card-body">
-                        <h5 class="card-title">Combo Nicasia</h5>
-                        <p class="card-text">Botella de 750ml + 2 copas de cristal</p>
-                        <p class="precio">$30.000</p>
-                    </div>
-                </div>
-            </div>
-
-
-
+                <button class="search__btn" type="submit" aria-label="Buscar">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 12h11" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        <path d="M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </form>
         </div>
-    </section>
-    <!-- Fin del catálogo -->
+
+        <!-- Barra de filtros -->
+        <div class="text-center my-4">
+            <button class="btn btn-outline-dark filtro active" data-filtro="all" type="button"><b>Todas</b></button>
+            <button class="btn btn-outline-dark filtro" data-filtro="promo" type="button"><b>Promos</b></button>
+            <button class="btn btn-outline-dark filtro" data-filtro="aperitivo" type="button"><b>Aperitivos</b></button>
+            <button class="btn btn-outline-dark filtro" data-filtro="cerveza" type="button"><b>Cervezas</b></button>
+            <button class="btn btn-outline-dark filtro" data-filtro="combo" type="button"><b>Combos</b></button>
+            <button class="btn btn-outline-dark filtro" data-filtro="espumante" type="button"><b>Espumantes</b></button>
+            <button class="btn btn-outline-dark filtro" data-filtro="vino" type="button"><b>Vinos</b></button>
+            <button class="btn btn-outline-dark filtro" data-filtro="whisky" type="button"><b>Whisky</b></button>
+        </div>
+
+        <!-- Catálogo -->
+        <section class="container my-5">
+            <div class="row" id="catalogo">
+
+                <!-- Producto 1 -->
+                <div class="col-md-4 mb-4 producto" data-categoria="aperitivo promo">
+                    <div class="card h-100">
+                        <img src="assets/img/fernet.jpeg" class="card-img-top" alt="Fernet" loading="lazy"
+                            decoding="async">
+                        <div class="card-body">
+                            <h4 class="card-promo">¡Promo!</h4>
+                            <h5 class="card-title">Fernet</h5>
+                            <p class="card-text">Botella de 1000ml</p>
+                            <p class="precio">$2500</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Producto 2 -->
+                <div class="col-md-4 mb-4 producto" data-categoria="aperitivo vodka">
+                    <div class="card h-100">
+                        <img src="assets/img/smirnoffcomun.jpeg" class="card-img-top" alt="Vodka" loading="lazy"
+                            decoding="async">
+                        <div class="card-body">
+                            <h5 class="card-title">Smirnoff Común</h5>
+                            <p class="card-text">Botella de 750ml</p>
+                            <p class="precio">$1500</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Producto 3 -->
+                <div class="col-md-4 mb-4 producto" data-categoria="aperitivo">
+                    <div class="card h-100">
+                        <img src="assets/img/fernet.png" class="card-img-top" alt="Fernet" loading="lazy"
+                            decoding="async">
+                        <div class="card-body">
+                            <h5 class="card-title">Fernet</h5>
+                            <p class="card-text">Botella de 750ml</p>
+                            <p class="precio">$1500</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Producto 4 -->
+                <div class="col-md-4 mb-4 producto" data-categoria="vino blanco">
+                    <div class="card h-100">
+                        <img src="assets/img/santajulia.jpeg" class="card-img-top" alt="Santa Julia" loading="lazy"
+                            decoding="async">
+                        <div class="card-body">
+                            <h5 class="card-title">Vino Santa Julia dulce</h5>
+                            <p class="card-text">Botella de 750ml</p>
+                            <p class="precio">$6500</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Producto 5 -->
+                <div class="col-md-4 mb-4 producto" data-categoria="espumante">
+                    <div class="card h-100">
+                        <img src="assets/img/vinyesdulce.jpeg" class="card-img-top" alt="Vinyes Dulce torrontes"
+                            loading="lazy" decoding="async">
+                        <div class="card-body">
+                            <h5 class="card-title">Vinyes Dulce Torrontes</h5>
+                            <p class="card-text">Botella de 1L</p>
+                            <p class="precio">$3500</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Producto 6 -->
+                <div class="col-md-4 mb-4 producto" data-categoria="vino blanco">
+                    <div class="card h-100">
+                        <img src="assets/img/crux.jpeg" class="card-img-top" alt="Vino crux" loading="lazy"
+                            decoding="async">
+                        <div class="card-body">
+                            <h5 class="card-title">Vino crux</h5>
+                            <p class="card-text">Botella de 750ml</p>
+                            <p class="precio">$2700</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Producto 7 (Carrusel) -->
+                <div class="col-md-4 mb-4 producto" data-categoria="">
+                    <div class="card h-100">
+                        <div id="carouselProducto7" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="assets/img/regaleria1.jpeg" class="d-block w-100" alt="regalo 1"
+                                        loading="lazy" decoding="async">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="assets/img/regaleria2.jpeg" class="d-block w-100" alt="regalo 2"
+                                        loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselProducto7"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon"></span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselProducto7"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon"></span>
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Regalería</h5>
+                            <p class="card-text">Set de regalo</p>
+                            <p class="precio">$ Consultar combo</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Producto 8 -->
+                <div class="col-md-4 mb-4 producto" data-categoria="aperitivo">
+                    <div class="card h-100">
+                        <img src="assets/img/amarula.jpeg" class="card-img-top" alt="Amarula" loading="lazy"
+                            decoding="async">
+                        <div class="card-body">
+                            <h5 class="card-title">Amarula + vaso</h5>
+                            <p class="card-text">Botella de 375ml</p>
+                            <p class="precio">$20.000</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Producto 9 (Carrusel) -->
+                <div class="col-md-4 mb-4 producto" data-categoria="">
+                    <div class="card h-100">
+                        <div id="carouselProducto9" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="assets/img/olivazuccardi1.jpeg" class="d-block w-100" alt="oliva 1"
+                                        loading="lazy" decoding="async">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="assets/img/olivazuccardi2.jpeg" class="d-block w-100" alt="oliva 2"
+                                        loading="lazy" decoding="async">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="assets/img/olivazuccardi3.jpeg" class="d-block w-100" alt="oliva 3"
+                                        loading="lazy" decoding="async">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="assets/img/olivazuccardi4.jpeg" class="d-block w-100" alt="oliva 4"
+                                        loading="lazy" decoding="async">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="assets/img/olivazuccardi5.jpeg" class="d-block w-100" alt="oliva 5"
+                                        loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselProducto9"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon"></span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselProducto9"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon"></span>
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Aceite de Oliva Zuccardi</h5>
+                            <p class="card-text">Botella de 500ml x3 + libro de recetas</p>
+                            <p class="precio">$50.000</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Producto 10 -->
+                <div class="col-md-4 mb-4 producto" data-categoria="vino tinto">
+                    <div class="card h-100">
+                        <img src="assets/img/nocheterna.jpeg" class="card-img-top" alt="Vino Nocheterna" loading="lazy"
+                            decoding="async">
+                        <div class="card-body">
+                            <h5 class="card-title">Vino Nocheterna</h5>
+                            <p class="card-text">Botella de 750ml</p>
+                            <p class="precio">$7.500</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Producto 11 -->
+                <div class="col-md-4 mb-4 producto" data-categoria="aperitivo">
+                    <div class="card h-100">
+                        <img src="assets/img/mildemonios.jpeg" class="card-img-top" alt="Mildemonios" loading="lazy"
+                            decoding="async">
+                        <div class="card-body">
+                            <h5 class="card-title">Gin Mildemonios</h5>
+                            <p class="card-text">Botella de 750ml</p>
+                            <p class="precio">$40.000</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Producto 12 -->
+                <div class="col-md-4 mb-4 producto" data-categoria="whisky">
+                    <div class="card h-100">
+                        <img src="assets/img/jackdaniels.jpeg" class="card-img-top" alt="Jack Daniel's" loading="lazy"
+                            decoding="async">
+                        <div class="card-body">
+                            <h5 class="card-title">Jack Daniel's</h5>
+                            <p class="card-text">Botella de 750ml</p>
+                            <p class="precio">$40.000</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Producto 13 -->
+                <div class="col-md-4 mb-4 producto" data-categoria="vino tinto">
+                    <div class="card h-100">
+                        <img src="assets/img/nicasia.jpg" class="card-img-top" alt="Nicasia" loading="lazy"
+                            decoding="async">
+                        <div class="card-body">
+                            <h5 class="card-title">Vino Nicasia</h5>
+                            <p class="card-text">Botella de 750ml</p>
+                            <p class="precio">$6.500</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Producto 13 -->
+                <div class="col-md-4 mb-4 producto" data-categoria="combo">
+                    <div class="card h-100">
+                        <img src="assets/img/combocatena.jpeg" class="card-img-top" alt="D.V. Catena" loading="lazy"
+                            decoding="async">
+                        <div class="card-body">
+                            <h5 class="card-title">Combo D.V. Catena</h5>
+                            <p class="card-text">Botella de 750ml + 2 copas de cristal</p>
+                            <p class="precio">$32.000</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Producto 13 -->
+                <div class="col-md-4 mb-4 producto" data-categoria="combo">
+                    <div class="card h-100">
+                        <img src="assets/img/combosj.jpeg" class="card-img-top" alt="Santa Julia" loading="lazy"
+                            decoding="async">
+                        <div class="card-body">
+                            <h5 class="card-title">Combo Santa Julia dulce</h5>
+                            <p class="card-text">Botella de 750ml + 2 copas de cristal</p>
+                            <p class="precio">$30.000</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Producto 14 -->
+                <div class="col-md-4 mb-4 producto" data-categoria="espumante">
+                    <div class="card h-100">
+                        <img src="assets/img/vinyesextrabrut.jpeg" class="card-img-top" alt="Vinyes Extra Brut"
+                            loading="lazy" decoding="async">
+                        <div class="card-body">
+                            <h5 class="card-title">Vinyes Extra Brut</h5>
+                            <p class="card-text">Botella de 750ml</p>
+                            <p class="precio">$15.000</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Producto 15 -->
+                <div class="col-md-4 mb-4 producto" data-categoria="espumante">
+                    <div class="card h-100">
+                        <img src="assets/img/vinyesrosado.jpeg" class="card-img-top" alt="Vinyes Nat Rosado"
+                            loading="lazy" decoding="async">
+                        <div class="card-body">
+                            <h5 class="card-title">Vinyes Nat Rosado</h5>
+                            <p class="card-text">Botella de 750ml</p>
+                            <p class="precio">$20.000</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Producto 16 -->
+                <div class="col-md-4 mb-4 producto" data-categoria="aperitivo">
+                    <div class="card h-100">
+                        <img src="assets/img/jagger.jpeg" class="card-img-top" alt="Jägermeister" loading="lazy"
+                            decoding="async">
+                        <div class="card-body">
+                            <h5 class="card-title">Jagermeister</h5>
+                            <p class="card-text">Botella de 700ml</p>
+                            <p class="precio">$32.500</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Producto 17 -->
+                <div class="col-md-4 mb-4 producto" data-categoria="combo">
+                    <div class="card h-100">
+                        <img src="assets/img/combocorona.jpg" class="card-img-top" alt="Combo Corona" loading="lazy"
+                            decoding="async">
+                        <div class="card-body">
+                            <h5 class="card-title">Combo Corona</h5>
+                            <p class="card-text">Frapera Corona + soporte de celular (no incluye las cerveza)</p>
+                            <p class="precio">$28.000</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Producto 18 -->
+                <div class="col-md-4 mb-4 producto" data-categoria="espumante">
+                    <div class="card h-100">
+                        <img src="assets/img/baronb.jpeg" class="card-img-top" alt="Baron B" loading="lazy"
+                            decoding="async">
+                        <div class="card-body">
+                            <h5 class="card-title">Baron B Extra brut</h5>
+                            <p class="card-text">Botella de 750ml</p>
+                            <p class="precio">$29.000</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Producto 19 -->
+                <div class="col-md-4 mb-4 producto" data-categoria="espumante">
+                    <div class="card h-100">
+                        <img src="assets/img/chandon.jpeg" class="card-img-top" alt="Chandon" loading="lazy"
+                            decoding="async">
+                        <div class="card-body">
+                            <h5 class="card-title">Chandon Extra brut</h5>
+                            <p class="card-text">Botella de 750ml</p>
+                            <p class="precio">$15.000</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Producto 19 -->
+                <div class="col-md-4 mb-4 producto" data-categoria="espumante combo">
+                    <div class="card h-100">
+                        <img src="assets/img/combovinyes.jpeg" class="card-img-top" alt="Combo Vinyes" loading="lazy"
+                            decoding="async">
+                        <div class="card-body">
+                            <h5 class="card-title">Combo Vinyes</h5>
+                            <p class="card-text">Botellas de 750ml x3 distintas</p>
+                            <p class="precio">$46.000</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Producto 20 -->
+                <div class="col-md-4 mb-4 producto" data-categoria="vino tinto combo">
+                    <div class="card h-100">
+                        <img src="assets/img/comboriver.jpeg" class="card-img-top" alt="Combo River" loading="lazy"
+                            decoding="async">
+                        <div class="card-body">
+                            <h5 class="card-title">Combo River Regalo</h5>
+                            <p class="card-text">Botella de 750ml + 2 copas de cristal + caja de regalo</p>
+                            <p class="precio">$45.000</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Producto 21 -->
+                <div class="col-md-4 mb-4 producto" data-categoria="vino tinto combo">
+                    <div class="card h-100">
+                        <img src="assets/img/comboboca.jpeg" class="card-img-top" alt="Combo Boca" loading="lazy"
+                            decoding="async">
+                        <div class="card-body">
+                            <h5 class="card-title">Combo Boca Regalo</h5>
+                            <p class="card-text">Botella de 750ml + 2 copas de cristal + caja de regalo</p>
+                            <p class="precio">$45.000</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Producto 20 -->
+                <div class="col-md-4 mb-4 producto" data-categoria="vino tinto combo">
+                    <div class="card h-100">
+                        <img src="assets/img/combonicasia.jpeg" class="card-img-top" alt="Combo Nicasia" loading="lazy"
+                            decoding="async">
+                        <div class="card-body">
+                            <h5 class="card-title">Combo Nicasia</h5>
+                            <p class="card-text">Botella de 750ml + 2 copas de cristal</p>
+                            <p class="precio">$30.000</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- Fin del catálogo -->
+    </main>
 
     <!-- Footer -->
     <footer>
         <div class="box-footer">
             <h3>Contactos</h3>
-            <a class="redes" href="https://www.instagram.com/aurea_bebidas/" target="_blank">Instagram</a>
-            <a class="redes" href="https://wa.me/2212005230" target="_blank">Whatsapp</a>
+            <a class="redes" href="https://www.instagram.com/aurea_bebidas/" target="_blank"
+                rel="noopener">Instagram</a>
+            <a class="redes" href="https://wa.me/2212005230" target="_blank" rel="noopener">Whatsapp</a>
         </div>
     </footer>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    <!-- Bootstrap JS (defer, no bloquea) -->
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
-    <script src="js/script.js"></script>
 
-    <a href="https://wa.me/2212005230" class="whatsapp-float" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+    <!-- Tu JS (defer) -->
+    <script defer src="js/script.js"></script>
+
+    <a href="https://wa.me/2212005230" class="whatsapp-float" target="_blank" rel="noopener">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" loading="lazy"
+            decoding="async" />
     </a>
 </body>
 
