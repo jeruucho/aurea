@@ -716,3 +716,29 @@ body.dark-mode .section-contacto .title {
     #catalogo .producto { flex: 0 0 calc(23% - 20px); max-width: calc(23% - 20px); }
 }
 
+/* ===========================
+   PREVENIR OVERFLOW EN IMÁGENES
+   =========================== */
+.card-img-top,
+.carousel-item img,
+img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    /* asegura que la imagen llene el contenedor sin deformarse */
+}
+
+/* Ajuste específico para carruseles dentro de cards */
+.carousel-item {
+    max-height: 300px;
+    /* Ajusta la altura según necesites */
+    overflow: hidden;
+    /* Oculta exceso */
+}
+
+/* Evitar overflow horizontal de la fila de productos */
+#catalogo {
+    overflow-x: hidden;
+}
