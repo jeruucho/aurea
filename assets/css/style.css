@@ -133,6 +133,8 @@ main {
     width: 100%;
 }
 
+
+
 #catalogo .producto {
     flex: 0 0 66%;
     max-width: 66%;
@@ -185,6 +187,29 @@ main {
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
+.card-body:has(.card-promo) .precio {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    color: #e9bb2e;
+    font-weight: bold;
+}
+/* ===========================
+   ESTILO PRECIO
+   =========================== */
+.precio {
+    font-size: 1.25rem;
+    /* más grande que el texto normal */
+    font-weight: bold;
+    /* negrita */
+    color: #152a6a;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    /* leve sombra */
+    margin-top: 10px;
+    display: block;
+    /* por si está dentro de un párrafo */
+    text-align: center;
+    /* lo centra dentro de la card */
+}
 /* ===========================
    BARRA DE BÚSQUEDA
    =========================== */

@@ -47,11 +47,10 @@
                                     <button class="dropbtn">Categorias</button>
                                     <div class="dropdown-content">
                                         <button class="filtro active" data-filtro="all" type="button">Todos</button>
+                                        <button class="filtro" data-filtro="promo" type="button">Promos</button>
                                         <button class="filtro" data-filtro="aperitivo" type="button">Aperitivos</button>
                                         <button class="filtro" data-filtro="cerveza" type="button">Cervezas</button>
-                                        <button class="filtro" data-filtro="combo" type="button">Combos</button>
                                         <button class="filtro" data-filtro="espumante" type="button">Espumantes</button>
-                                        <button class="filtro" data-filtro="promo" type="button">Promos</button>
                                         <div class="submenu">
                                             <button class="filtro" data-filtro="vino" type="button">Vinos</button>
                                             <div class="submenu-content">
@@ -80,7 +79,7 @@
     <main>
         <div class="wrap">
             <h1 class="title">Busca por producto</h1>
-            <p class="hint">Ultima actualizacion: 28-08-2025</p>
+            <p class="hint">Ultima actualizacion: 02-09-2025</p>
 
             <!-- Barra de búsqueda -->
             <form class="search" role="search" action="#" method="get">
@@ -107,11 +106,11 @@
         <!-- Barra de filtros -->
         <div class="text-center my-4">
             <button class="btn btn-outline-dark filtro active" data-filtro="all" type="button"><b>Todas</b></button>
-            <button class="btn btn-outline-dark filtro" data-filtro="promo" type="button"><b>Promos</b></button>
+            <button class="btn btn-outline-dark filtro" data-filtro="promo" type="button"><b>Ofertas y Combos</b></button>
             <button class="btn btn-outline-dark filtro" data-filtro="aperitivo" type="button"><b>Aperitivos</b></button>
             <button class="btn btn-outline-dark filtro" data-filtro="cerveza" type="button"><b>Cervezas</b></button>
-            <button class="btn btn-outline-dark filtro" data-filtro="combo" type="button"><b>Combos</b></button>
             <button class="btn btn-outline-dark filtro" data-filtro="espumante" type="button"><b>Espumantes</b></button>
+            <button class="btn btn-outline-dark filtro" data-filtro="regalo" type="button"><b>Regaleria</b></button>
             <button class="btn btn-outline-dark filtro" data-filtro="vino" type="button"><b>Vinos</b></button>
             <button class="btn btn-outline-dark filtro" data-filtro="whisky" type="button"><b>Whisky</b></button>
         </div>
@@ -121,15 +120,14 @@
             <div class="row" id="catalogo">
 
                 <!-- Producto 1 -->
-                <div class="col-md-4 mb-4 producto" data-categoria="aperitivo promo">
+                <div class="col-md-4 mb-4 producto" data-categoria="aperitivo">
                     <div class="card h-100">
                         <img src="assets/img/fernet.jpeg" class="card-img-top" alt="Fernet" loading="lazy"
                             decoding="async">
                         <div class="card-body">
-                            <h4 class="card-promo">¡Promo!</h4>
                             <h5 class="card-title">Fernet</h5>
                             <p class="card-text">Botella de 1000ml</p>
-                            <p class="precio">$2500</p>
+                            <p class="precio">$13.000</p>
                         </div>
                     </div>
                 </div>
@@ -142,20 +140,20 @@
                         <div class="card-body">
                             <h5 class="card-title">Smirnoff Común</h5>
                             <p class="card-text">Botella de 750ml</p>
-                            <p class="precio">$1500</p>
+                            <p class="precio">$8.000</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Producto 3 -->
-                <div class="col-md-4 mb-4 producto" data-categoria="aperitivo">
+                <div class="col-md-4 mb-4 producto" data-categoria="aperitivo promo">
                     <div class="card h-100">
-                        <img src="assets/img/fernet.png" class="card-img-top" alt="Fernet" loading="lazy"
-                            decoding="async">
+                        <img src="assets/img/jagger.jpeg" class="card-img-top" alt="Jägermeister" loading="lazy" decoding="async">
                         <div class="card-body">
-                            <h5 class="card-title">Fernet</h5>
-                            <p class="card-text">Botella de 750ml</p>
-                            <p class="precio">$1500</p>
+                            <h4 class="card-promo">¡Oferta!</h4>
+                            <h5 class="card-title">Jagermeister</h5>
+                            <p class="card-text">Botella de 700ml</p>
+                            <p class="precio">$31.000</p>
                         </div>
                     </div>
                 </div>
@@ -168,7 +166,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Vino Santa Julia dulce</h5>
                             <p class="card-text">Botella de 750ml</p>
-                            <p class="precio">$6500</p>
+                            <p class="precio">$6.500</p>
                         </div>
                     </div>
                 </div>
@@ -181,7 +179,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Vinyes Dulce Torrontes</h5>
                             <p class="card-text">Botella de 1L</p>
-                            <p class="precio">$3500</p>
+                            <p class="precio">$14.000</p>
                         </div>
                     </div>
                 </div>
@@ -200,7 +198,7 @@
                 </div>
 
                 <!-- Producto 7 (Carrusel) -->
-                <div class="col-md-4 mb-4 producto" data-categoria="">
+                <div class="col-md-4 mb-4 producto" data-categoria="regalo promo ">
                     <div class="card h-100">
                         <div id="carouselProducto7" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
@@ -231,11 +229,12 @@
                 </div>
 
                 <!-- Producto 8 -->
-                <div class="col-md-4 mb-4 producto" data-categoria="aperitivo">
+                <div class="col-md-4 mb-4 producto" data-categoria="aperitivo promo">
                     <div class="card h-100">
                         <img src="assets/img/amarula.jpeg" class="card-img-top" alt="Amarula" loading="lazy"
                             decoding="async">
                         <div class="card-body">
+                            <h4 class="card-promo">¡Oferta!</h4>
                             <h5 class="card-title">Amarula + vaso</h5>
                             <p class="card-text">Botella de 375ml</p>
                             <p class="precio">$20.000</p>
@@ -244,7 +243,7 @@
                 </div>
 
                 <!-- Producto 9 (Carrusel) -->
-                <div class="col-md-4 mb-4 producto" data-categoria="">
+                <div class="col-md-4 mb-4 producto" data-categoria="regaleria promo">
                     <div class="card h-100">
                         <div id="carouselProducto9" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
@@ -281,7 +280,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Aceite de Oliva Zuccardi</h5>
                             <p class="card-text">Botella de 500ml x3 + libro de recetas</p>
-                            <p class="precio">$50.000</p>
+                            <p class="precio">$65.000</p>
                         </div>
                     </div>
                 </div>
@@ -307,7 +306,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Gin Mildemonios</h5>
                             <p class="card-text">Botella de 750ml</p>
-                            <p class="precio">$40.000</p>
+                            <p class="precio">$18.000</p>
                         </div>
                     </div>
                 </div>
@@ -339,7 +338,7 @@
                 </div>
 
                 <!-- Producto 13 -->
-                <div class="col-md-4 mb-4 producto" data-categoria="combo">
+                <div class="col-md-4 mb-4 producto" data-categoria="promo regalo">
                     <div class="card h-100">
                         <img src="assets/img/combocatena.jpeg" class="card-img-top" alt="D.V. Catena" loading="lazy"
                             decoding="async">
@@ -352,7 +351,7 @@
                 </div>
 
                 <!-- Producto 13 -->
-                <div class="col-md-4 mb-4 producto" data-categoria="combo">
+                <div class="col-md-4 mb-4 producto" data-categoria="promo">
                     <div class="card h-100">
                         <img src="assets/img/combosj.jpeg" class="card-img-top" alt="Santa Julia" loading="lazy"
                             decoding="async">
@@ -391,20 +390,20 @@
                 </div>
 
                 <!-- Producto 16 -->
-                <div class="col-md-4 mb-4 producto" data-categoria="aperitivo">
+                <div class="col-md-4 mb-4 producto" data-categoria="vino tinto">
                     <div class="card h-100">
-                        <img src="assets/img/jagger.jpeg" class="card-img-top" alt="Jägermeister" loading="lazy"
-                            decoding="async">
+                        <img src="assets/img/zorrosalvaje.jpg" class="card-img-top" alt="Salvaje Zorro" 
+                            loading="lazy" decoding="async">
                         <div class="card-body">
-                            <h5 class="card-title">Jagermeister</h5>
-                            <p class="card-text">Botella de 700ml</p>
-                            <p class="precio">$32.500</p>
+                            <h5 class="card-title">Vino Salvaje zorro</h5>
+                            <p class="card-text">Botella de 750ml</p>
+                            <p class="precio">$4.000</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Producto 17 -->
-                <div class="col-md-4 mb-4 producto" data-categoria="combo">
+                <div class="col-md-4 mb-4 producto" data-categoria="promo regalo">
                     <div class="card h-100">
                         <img src="assets/img/combocorona.jpg" class="card-img-top" alt="Combo Corona" loading="lazy"
                             decoding="async">
@@ -443,7 +442,7 @@
                 </div>
 
                 <!-- Producto 19 -->
-                <div class="col-md-4 mb-4 producto" data-categoria="espumante combo">
+                <div class="col-md-4 mb-4 producto" data-categoria="espumante promo regalo">
                     <div class="card h-100">
                         <img src="assets/img/combovinyes.jpeg" class="card-img-top" alt="Combo Vinyes" loading="lazy"
                             decoding="async">
@@ -456,7 +455,7 @@
                 </div>
 
                 <!-- Producto 20 -->
-                <div class="col-md-4 mb-4 producto" data-categoria="vino tinto combo">
+                <div class="col-md-4 mb-4 producto" data-categoria="vino tinto regalo">
                     <div class="card h-100">
                         <img src="assets/img/comboriver.jpeg" class="card-img-top" alt="Combo River" loading="lazy"
                             decoding="async">
@@ -469,7 +468,7 @@
                 </div>
 
                 <!-- Producto 21 -->
-                <div class="col-md-4 mb-4 producto" data-categoria="vino tinto combo">
+                <div class="col-md-4 mb-4 producto" data-categoria="vino tinto regalo">
                     <div class="card h-100">
                         <img src="assets/img/comboboca.jpeg" class="card-img-top" alt="Combo Boca" loading="lazy"
                             decoding="async">
@@ -482,7 +481,7 @@
                 </div>
 
                 <!-- Producto 20 -->
-                <div class="col-md-4 mb-4 producto" data-categoria="vino tinto combo">
+                <div class="col-md-4 mb-4 producto" data-categoria="vino tinto promo">
                     <div class="card h-100">
                         <img src="assets/img/combonicasia.jpeg" class="card-img-top" alt="Combo Nicasia" loading="lazy"
                             decoding="async">
