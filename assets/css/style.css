@@ -30,13 +30,14 @@ img {
     color: #152a6a;
     font-family: 'Righteous', cursive;
     font-weight: 400;
+    
 }
 
 .redes {
     margin: 20px;
     font-size: 20px;
     justify-content: space-between;
-    color: #efb810;
+    color: #FFD700;
 }
 
 /* Tema oscuro */
@@ -190,7 +191,7 @@ main {
     position: absolute;
     top: 15px;
     left: 15px;
-    background-color: #efb810;
+    background-color: #FFD700;
     color: #000000;
     padding: 7px 12px;
     border-radius: 5px;
