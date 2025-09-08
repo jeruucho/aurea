@@ -1,3 +1,12 @@
+/* === Gistesy (TTF) === */
+@font-face {
+    font-family: "Gistesy";
+    src: url("../fonts/Gistesy.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
 /* ===========================
    RESET & BASE
    =========================== */
@@ -25,12 +34,11 @@ img {
 }
 
 .title {
-    font-size: 80px;
+    font-size: 130px;
     margin-bottom: 15px;
     color: #152a6a;
-    font-family: 'Righteous', cursive;
+    font-family: "Gistesy", "Segoe Script", "Brush Script MT", cursive;
     font-weight: 400;
-    
 }
 
 .redes {
@@ -66,8 +74,10 @@ p, ul {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 28px;
+    font-size: 38px;
     font-weight: bold;
+    font-family: "Gistesy", "Segoe Script", "Brush Script MT", cursive;
+    font-weight: 400;
 }
 
 body.light .navbar {
@@ -553,6 +563,7 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    
     /* mejor distribución del contenido */
 }
 
@@ -562,11 +573,11 @@ footer {
 }
 
 .section-contacto .title {
-    font-size: 40px;
-    margin-bottom: 10px;
-    color: #000000;
-    text-decoration: underline;
-    font-family: Raleway
+    font-size: 80px;
+    margin-bottom: 15px;
+    color: #152a6a;
+    font-family: "Gistesy", "Segoe Script", "Brush Script MT", cursive;
+    font-weight: 400;
 }
 
 /* Lista de info */
